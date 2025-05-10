@@ -11,18 +11,18 @@ https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=U
 ==    Equal to\
 !=    Not equal to\
 <    Less than\
->    Greater Than\
+\>    Greater Than\
 <=    Less than or Equal to\
->=    Greater than or Equal to\
+\>=    Greater than or Equal to\
 
 
 **    Exponent    2 ** 3 = 8\
 %    Modulus/Remainder    22 % 8 = 6\
 //    Integer division    22 // 8 = 2\
-/    Division    22 / 8 = 2.75\
-*    Multiplication    3 * 3 = 9\
--    Subtraction    5 - 2 = 3\
-+    Addition    2 + 2 = 4\
+/    Division    22 / 8 = 2.75
+\*    Multiplication    3 * 3 = 9\
+\-    Subtraction    5 - 2 = 3\
+\+    Addition    2 + 2 = 4\
 
 %d: formatowanie liczb całkowitych\
 %f: formatowanie liczb zmiennoprzecinkowych\
