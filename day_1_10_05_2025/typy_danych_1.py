@@ -88,3 +88,17 @@ print(bool(0))  # False
 x = None  # nic, stan nieokreslony, nie wiem, odpowiednik null
 print(x)  # None
 print(bool(x))  # False
+
+a = 14
+b = 3
+
+print(f"{a=}")  # a=14
+print(f"{b=}")  # b=3
+print(f"Wynik porównania {a} > {b} = {a > b}")  # Wynik porównania 14 > 3 = True
+print(f"Wynik porównania {a} < {b} = {a < b}")  # Wynik porównania 14 < 3 = False
+print(f"Wynik porównania {a < b = }")  # Wynik porównania a < b = False
+print(f"Wynik porównania {a} <= {b} = {a <= b}")  # Wynik porównania 14 < 3 = False
+# shift ctrl strzałka w dół - przesunięcie lini w dół
+print(f"Wynik porównania {a} >= {b} = {a >= b}")  # Wynik porównania 14 >= 3 = True
+print(f"wynik porównania {a} == {b} = {a == b}")  # == porównanie, wynik porównania 14 == 3 = False
+print(f"wynik porównania {a} != {b} = {a != b}")  # != czy różne? wynik porównania 14 != 3 = True
