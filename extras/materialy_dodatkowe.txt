@@ -24,6 +24,7 @@ https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=U
 
 %d: formatowanie liczb całkowitych
 %f: formatowanie liczb zmiennoprzecinkowych
+%s - łańcuch znaków (string)
 %e lub %E: formatowanie liczb w notacji naukowej
 %x lub %X: formatowanie liczb w formacie szesnastkowym
 %o: formatowanie liczb w formacie ósemkowym
