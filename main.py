@@ -21,4 +21,4 @@ if __name__ == '__main__':
 # Hi, PyCharm
 # https://peps.python.org/pep-0008/ zasady formatowania kodu
 # PEP 8 - Style Guide for Python Code
-# ctrl alt l - formatowanie kodu zgonie z PEP8
+# ctrl alt l - formatowanie kodu zgodnie z PEP8
