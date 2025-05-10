@@ -1,6 +1,6 @@
 
 -----------------------
-rajkonkret660@gmail.com
+# rajkonkret660@gmail.com
 
 https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=US
 
