@@ -75,3 +75,45 @@ print(my_str.center(40))  # wycentrowanie tekstu podczas wypisywania
 print("Mój ulubiony serial \"Alternatywy 4\"")  # Mój ulubiony serial "Alternatywy 4"
 print('Mój ulubiony serial "Alternatywy 4"')  # Mój ulubiony serial "Alternatywy 4"
 # \ - w stringach znak ucieczki oznacza nie interpretuj kolejnego znaku tylko po prostu wyświetl
+
+imie = "Radek"
+# f-string - sformatowany tekst
+formatted_text = f"Mam na imię {imie} i lubię Pythona."
+print(formatted_text)  # Mam na imię Radek i lubię Pythona.
+
+formatted_text_2 = f"\tMam na imię {imie}\n i lubię Pythona.\b"
+print(formatted_text_2)
+# " 	Mam na imię Radek
+#  i lubię Pythona"
+# \n - Nowa linia
+# \t - Tabulacja pozioma
+# \b - Powrót kursora (usuwa poprzedni znak)
+
+# starszy sposób wstrzykiwania zmiennej do tekstu
+starszy = "Witaj %s!"  # w miejsce %s podstawi wartość zmiennej str
+print(starszy % name)  # Witaj Radek!
+# %s - łańcuch znaków (string)
+# %d - liczba całkowita (integer)
+# %i - liczba całkowita (integer)
+
+print("Witaj {}!".format(imie))  # Witaj Radek!
+
+print("Witaj", name)  # Witaj Radek
+
+print("""Tekst
+    wielolinijkowy""")
+# "Tekst
+#     wielolinijkowy"
+# WYSWIG
+
+"""Komentarz
+ wielolinijkowy"""
+# Process finished with exit code 0
+
+# kodowanie znaków
+encoded_s = tekst.encode("utf-8")
+print(encoded_s)  # b'Witaj \xc5\x9awiecie'
+print(type(encoded_s))  # <class 'bytes'>, typ bajtowy
+# b - typ bajtowy
+# \xc5\x9a - kod szesnatkowy znaku Ś, \xc5 -> 197
+print(encoded_s.decode('utf-8'))  # Witaj Świecie

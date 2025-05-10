@@ -29,8 +29,8 @@ https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=U
 %o: formatowanie liczb w formacie ósemkowym
 %c: formatowanie pojedynczych znaków
 
-%s - łańcuch znaków (string)
 %r - reprezentacja obiektu (repr)
+%s - łańcuch znaków (string)
 %d - liczba całkowita (integer)
 %i - liczba całkowita (integer)
 %o - liczba w formacie ósemkowym (octal)
