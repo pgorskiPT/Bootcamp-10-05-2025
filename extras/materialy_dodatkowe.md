@@ -80,14 +80,14 @@ https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=U
 print("\033[31mHello\033[0m") - kolorki
 
 
-The and Operator’s Truth Table:\
+### The and Operator’s Truth Table:
 Expression    Evaluates to\
 True and True    True\
 True and False    False\
 False and True    False\
 False and False    False
 
-The or Operator’s Truth Table:
+### The or Operator’s Truth Table:
 
 Expression    Evaluates to\
 True or True    True\
@@ -95,12 +95,12 @@ True or False    True\
 False or True    True\
 False or False    False
 
-The not Operator’s Truth Table:\
+### The not Operator’s Truth Table:
 Expression    Evaluates to\
 not True    False\
 not False
 
-Dla daty:
+## Dla daty:
 %Y: Rok z pełną liczbą cyfr, np. "1989", "2023".\
 %y: Rok z dwiema ostatnimi cyframi, np. "89", "23".\
 %m: Miesiąc z zerem wiodącym, np. "01" do "12".\
@@ -123,6 +123,7 @@ spam *= 1    spam = spam * 1\
 spam /= 1    spam = spam / 1\
 spam %= 1    spam = spam % 1
 
+## Float - problem zaokrąglenia
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
