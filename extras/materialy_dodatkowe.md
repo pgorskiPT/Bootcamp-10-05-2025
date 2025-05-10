@@ -120,3 +120,7 @@ spam %= 1    spam = spam % 1
 
 ![img.png](img.png)
 ![img_1.png](img_1.png)
+
+https://www.w3schools.com/python/default.asp
+https://www.hackerrank.com/domains/python
+https://www.hackerrank.com/domains/python
