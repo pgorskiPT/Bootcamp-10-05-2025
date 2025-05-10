@@ -31,3 +31,16 @@ print(f"Długośc: {len(str(wynik))}")  # Długośc: 3386
 print(74 - 8 * 45 + 8 / 2 + 8 / 2)  # -278.0
 print(74 - (8 * 45) + 8 / 2 + 8 / 2)  # -278.0
 print(74 - (8 * 45) + (8 / 2 + 8) / 2)  # -280.0
+
+# liczby float
+# bład zaokrąglenia
+print(0.2 + 0.8)  # 1.0
+print(0.2 + 0.7)  # 0.8999999999999999
+print(0.1 + 0.2)  # 0.30000000000000004
+# zapamietuje w postaci wykładniczej
+# x=SMB^E
+#  S (ang. sign) – znak liczby, 1 lub −1,
+#  M (ang. mantissa) – znormalizowana mantysa, liczba ułamkowa[1],
+#  B (ang. base) – podstawa systemu liczbowego[1] (2 dla systemów komputerowych),
+#  E (ang. exponent) – wykładnik, cecha, liczba całkowita[1].
+#  the sum 12.345 + 1.0001 = 13.3451 might be rounded to 13.345.
