@@ -19,3 +19,6 @@ if __name__ == '__main__':
 # ctrl shift f10
 # (.venv) PS C:\Users\radoslawjaniak\PycharmProjects\Bootcamp-10-05-2025> python .\main.py
 # Hi, PyCharm
+# https://peps.python.org/pep-0008/ zasady formatowania kodu
+# PEP 8 - Style Guide for Python Code
+# ctrl alt l - formatowanie kodu zgonie z PEP8
