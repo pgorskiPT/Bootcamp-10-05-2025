@@ -41,3 +41,34 @@ print(zbior.pop())  # 66
 zbior.pop()
 zbior.pop()
 print(zbior)  # {44, 18, 22, 55}
+
+# uzycie sorted() na zbiorze
+# zwróci nam listę posortowanych elemntó∑
+print(sorted(zbior))  # [18, 22, 44, 55]
+
+# usunięcie elementu ze zbioru
+zbior.remove(55)
+zbior.remove(18)
+print(f"Zbiór po usunięciu: {zbior=}")  # Zbiór po usunięciu: zbior={44, 22}
+print(f"Zbiór po usunięciu: {zbior}")  # Zbiór po usunięciu: {44, 22}
+
+# tworzenie zbioru z konkretnymi wartościami
+zbior2 = {667, 11, 44, 18, 52, 22, 667, 62, 999}
+print(zbior2)  # {999, 11, 44, 18, 52, 22, 667, 62}
+
+zbior3 = {667, 11, 44, 18, 667, 62, 999}
+print(zbior3)  # {18, 999, 11, 44, 667, 62}
+
+# suma zbiorów - wszystkie lementy, ktore znajdują się w jednym i drugim zbiorze
+# tworzy nowy zbiór
+print(zbior | zbior3)  # {999, 11, 44, 18, 22, 667, 62}
+print(zbior.union(zbior3))  # {999, 11, 44, 18, 22, 667, 62}
+# zbiory bazowe nie zmieniły się
+print(zbior)  # {44, 22}
+print(zbior3)  # {18, 999, 11, 44, 667, 62}
+
+zbior4 = {8, 9, 10}
+print(zbior.union(zbior3, zbior4))
+# {999, 8, 9, 10, 11, 44, 18, 22, 667, 62} - suma trzech zbiorów
+print(zbior | zbior3 | zbior4)
+# {999, 8, 9, 10, 11, 44, 18, 22, 667, 62}
