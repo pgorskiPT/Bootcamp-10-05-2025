@@ -253,4 +253,7 @@ lista_str_pusta = []
 lista_str_pusta.append(tekst)
 print(lista_str_pusta)  # ['Pyth on.']
 
-
+# zamiana listy na krotkę
+krotka = tuple(liczby)
+print(krotka)  # (999, 687, 45, 13.34)
+print(type(krotka))  # <class 'tuple'>
