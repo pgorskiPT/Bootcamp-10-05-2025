@@ -95,3 +95,16 @@ b = {2, 3, 4}
 a.intersection_update(b)  # część wspólna zbiorów, wynik zapisany do zbioru a
 print(f"{a=}")  # a={2, 3}, zbiór a został nadpisany
 
+# frozenset() - zbiór niemutowalny
+frozen = frozenset([1, 2, 3])
+print(frozen)  # frozenset({1, 2, 3})
+print(type(frozen))  # <class 'frozenset'>
+
+lista_temp = [[2, 3], [4, 5]]
+print(lista_temp)  # [[2, 3], [4, 5]], lista w liscie, python nie ma Array
+
+# nie można robić zagnieżdzonych zbiorów
+# nested_set = {1, {2, 3}} # TypeError: unhashable type: 'set'
+
+nested_set = {1, frozenset({2, 3})}
+print(nested_set)  # {1, frozenset({2, 3})}
