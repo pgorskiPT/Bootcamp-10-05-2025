@@ -58,4 +58,21 @@ print(tupla_liczby[-1::-1])  # (200, 11, 22.34, 55, 43)
 print(tupla_liczby[1:4:2])  # (55, 11) co drugi element
 print(tupla_liczby[:])  # (43, 55, 22.34, 11, 200)
 
+print(tupla_names)
+print("Radek" in tupla_names)  # True, element istnieje w krotce
 
+# count() - zlicza ile razy element wystąpi w tupli (krotce)
+print(tupla_names.count("Tomek"))  # wystepuje 1 raz
+
+# index() - sprawdzenie na którym indeksie znajduje się element
+print(tupla_names.index("Radek"))  # index numer 0
+
+# sorted() - sortowanie kolekcji, zwraca nową listę z posortowanymi elementami
+print(sorted(tupla_names))
+# ['Bartek', 'Radek', 'Tomek', 'Zenek']
+print(tupla_names)  # ('Radek', 'Tomek', 'Zenek', 'Bartek')
+
+# sortowanie z odwróceniem
+print(sorted(tupla_names, reverse=True))  # ['Zenek', 'Tomek', 'Radek', 'Bartek'] zwróci listę
+
+print(tupla_names)  # ('Radek', 'Tomek', 'Zenek', 'Bartek'), krotka nie zmimeniła się
