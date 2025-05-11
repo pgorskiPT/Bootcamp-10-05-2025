@@ -72,3 +72,26 @@ print(zbior.union(zbior3, zbior4))
 # {999, 8, 9, 10, 11, 44, 18, 22, 667, 62} - suma trzech zbiorów
 print(zbior | zbior3 | zbior4)
 # {999, 8, 9, 10, 11, 44, 18, 22, 667, 62}
+
+# część wspólna - zwraca nowy zbiór
+print(zbior & zbior3)  # {44}
+print(zbior.intersection(zbior3))  # {44}
+
+# róznica zbiorów - zwróci nowy zbiór
+print(zbior - zbior3)  # {22}
+print(zbior.difference(zbior3))  # {22}
+print(zbior3.difference(zbior))  # {999, 11, 18, 667, 62}
+
+# suma zbiorów
+# zmienia zbiór bazowy !!!
+# wynik pojawi się w zbiorze a
+a = {1, 2}
+b = {2, 3}
+a.update(b)
+print(f"{a=}")  # a={1, 2, 3}, zbiór a uległ zmiannie
+
+a = {1, 2, 3}
+b = {2, 3, 4}
+a.intersection_update(b)  # część wspólna zbiorów, wynik zapisany do zbioru a
+print(f"{a=}")  # a={2, 3}, zbiór a został nadpisany
+
