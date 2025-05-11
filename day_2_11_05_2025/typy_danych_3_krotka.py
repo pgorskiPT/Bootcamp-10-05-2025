@@ -137,3 +137,8 @@ print("Dalszy tekst")  # Jeden:Dwa:TrzyDalszy tekst - tekst wypisany w tej samej
 print("Radek")  # Radek, wypisze w nowej lini bo porzednia linia ma domyślny znak końca linii end="\n"
 # sep: znak oddzielający elementy wypisywane po przecinku (doyślnie " ")
 # end: znak końca linii (domyślnie "\n" - nowa linia)
+
+lista = list(tupla_names)
+print(lista)  # ['Radek', 'Tomek', 'Zenek', 'Bartek']
+print(type(lista))  # <class 'list'>
+print(len(lista))  # długośc 4 elementy
