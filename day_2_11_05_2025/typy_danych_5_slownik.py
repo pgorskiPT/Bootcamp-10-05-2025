@@ -65,3 +65,30 @@ print(dict_with_dict)
 #  'B': ('Bat', 'cat', 'hat'),
 #  'C': {'Name', 10, 'age'},
 #  'D': {'Name': 'Radek', 'age': 76}}
+
+# tworzenie słownika z sekwencji kluczy
+keys = {'a', 'b', 'c', 'd'}
+my_dict = dict.fromkeys(keys)
+print(my_dict)  # {'c': None, 'b': None, 'a': None, 'd': None}
+# domyślnie jako wartość przyjmuje None
+
+value = 10
+my_dict_3 = dict.fromkeys(keys, value)
+print(my_dict_3)  # {'d': 10, 'a': 10, 'c': 10, 'b': 10}
+# jako wartość podstawi wartość ze zmiennej value
+
+value = [10, 20, 30]
+my_dict_4 = dict.fromkeys(keys, value)
+print(my_dict_4)
+# {'a': [10, 20, 30], 'd': [10, 20, 30], 'c': [10, 20, 30], 'b': [10, 20, 30]}
+
+# zastosowanie fromkeys() do usunięcia duplikatów z listy
+# od pythona 3.7 można ząlożyć, ze zachowa kolejność
+keys = [1, 2, 2, 3, 4, 4, 5]  # lista z duplikatami
+dict_unique = dict.fromkeys(keys)
+print(dict_unique)  # {1: None, 2: None, 3: None, 4: None, 5: None}
+list_unique = list(dict_unique)
+print(list_unique)  # [1, 2, 3, 4, 5]
+
+print(list(dict.fromkeys(keys)))  # [1, 2, 3, 4, 5], w jedej linijce
+
