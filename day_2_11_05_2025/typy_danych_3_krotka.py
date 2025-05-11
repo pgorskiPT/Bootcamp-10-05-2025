@@ -76,3 +76,39 @@ print(tupla_names)  # ('Radek', 'Tomek', 'Zenek', 'Bartek')
 print(sorted(tupla_names, reverse=True))  # ['Zenek', 'Tomek', 'Radek', 'Bartek'] zwróci listę
 
 print(tupla_names)  # ('Radek', 'Tomek', 'Zenek', 'Bartek'), krotka nie zmimeniła się
+
+# rozpakowanie tupli
+a, b = 1, 2
+print(f"{a=}, {b=}")  # a=1, b=2
+b, a = a, b  # zamiana wartosci między zmiennymi a i b
+print(f"{a=}, {b=}")  # a=2, b=1
+
+print(type((1, 2)))  # <class 'tuple'>
+
+tup1 = 1, 2
+print(type(tup1))  # <class 'tuple'>
+
+a, b = tup1
+print(f"{a=}, {b=}")  # a=1, b=2
+
+tup2 = 1, 2, 3
+print(type(tup2))  # <class 'tuple'>
+# a, b = tup2 # ValueError: too many values to unpack (expected 2)
+a, *b = tup2  # * worek na pozostałe dane
+print(f"{a=}, {b=}")  # a=1, b=[2, 3]
+
+print(tupla_names)  # ('Radek', 'Tomek', 'Zenek', 'Bartek')
+# name1, name2, name3
+# rozpakowac tupla_names na trzy zmienne
+
+name1, name2, *name3 = tupla_names
+print(f"{name1=}, {name2=}, {name3=}")
+# name1='Radek', name2='Tomek', name3=['Zenek', 'Bartek']
+
+*name1, name2, name3 = tupla_names
+print(f"{name1=}, {name2=}, {name3=}")
+# name1=['Radek', 'Tomek'], name2='Zenek', name3='Bartek'
+
+name1, *name2, name3 = tupla_names
+print(f"{name1=}, {name2=}, {name3=}")
+# name1='Radek', name2=['Tomek', 'Zenek'], name3='Bartek'
