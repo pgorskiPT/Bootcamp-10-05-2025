@@ -102,3 +102,51 @@ print(f"Wynik porównania {a} <= {b} = {a <= b}")  # Wynik porównania 14 < 3 = 
 print(f"Wynik porównania {a} >= {b} = {a >= b}")  # Wynik porównania 14 >= 3 = True
 print(f"wynik porównania {a} == {b} = {a == b}")  # == porównanie, wynik porównania 14 == 3 = False
 print(f"wynik porównania {a} != {b} = {a != b}")  # != czy różne? wynik porównania 14 != 3 = True
+
+# operacje logiczny
+# and  - i
+print(True and True)  # True
+print(True and False)  # False
+print(False and True)  # False
+print(False and False)  # False
+
+# or - lub
+print(True or True)  # True
+print(True or False)  # True
+print(False or True)  # True
+print(False or False)  # False
+
+# not - negacja
+print(not True)  # False
+print(not False)  # True
+
+my_str = '123456789'
+# A string is numeric if all characters in the string are numeric
+print(my_str.isnumeric())  # True
+
+# A string is alpha-numeric if all characters in the string are alpha-numeric
+print(my_str.isalnum())  # True
+
+# A string is a decimal string if all characters in the string are decimal
+print(my_str.isdecimal())  # True
+
+# A string is alphabetic if all characters in the string are alphabetic
+print(my_str.isalpha())  # False
+
+print(10 * "-")
+my_str = "abcdefghijkl"
+print(my_str.isalpha())  # True
+print(my_str.isalnum())  # True
+print(my_str.isdecimal())  # False
+print(my_str.isnumeric())  # False
+print(my_str.islower())  # True
+print(my_str.isupper())  # False
+
+print(10 * "-")
+my_str2 = "Radek12345"
+print(my_str2.isnumeric())  # False
+print(my_str2.isalnum())  # True
+print(my_str2.isdecimal())  # False
+print(my_str2.isalpha())  # False
+print(my_str2.isupper())  # False
+print(my_str2.islower())  # False
