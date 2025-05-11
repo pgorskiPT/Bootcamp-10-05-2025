@@ -88,3 +88,5 @@ print(lista[2:2])  # []
 print(lista[2:3])  # ['Tomek']
 print(lista[4:10])  # ['Marta', 'Anna']
 print(lista[7:12])  # []
+# Przerwa do 11:15
+
