@@ -90,3 +90,46 @@ print(lista[4:10])  # ['Marta', 'Anna']
 print(lista[7:12])  # []
 # Przerwa do 11:15
 
+# nadpisanie elementu w liście na wskazanym indeksie
+lista[2] = 'Mikołaj'
+print(lista)  # ['Radek', 'Maciek', 'Mikołaj', 'Zenek', 'Marta', 'Anna']
+print(len(lista))  # długość 6
+
+# rozszerzenie listy, wstawienie lementu we wslazanym indeksie
+lista.insert(1, "Karolina")
+print(lista)  # ['Radek', 'Karolina', 'Maciek', 'Mikołaj', 'Zenek', 'Marta', 'Anna']
+print(len(lista))  # długość 7
+
+# usunięcie elementu z listy
+# 1. usunięcie po indeksie -> pop()
+# 2. usunięcie po elemencie -> remove()
+
+# po indeksie pop()
+print(lista.pop(0))  # Radek
+print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Zenek', 'Marta', 'Anna']
+ind = lista.index("Zenek")
+print("Numer indeksu dla Zenka:", ind)  # Numer indeksu dla Zenka: 3, pierwszy napotkany
+lista.append("Zenek")
+print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Zenek', 'Marta', 'Anna', 'Zenek']
+print("Numer indeksu dla Zenka:", ind)  # Numer indeksu dla Zenka: 3
+print(lista.pop(ind))  # Zenek
+print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Marta', 'Anna', 'Zenek']
+
+# usunięcie po elemencie
+lista.append("Maciek")
+print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Marta', 'Anna', 'Zenek', 'Maciek']
+lista.remove("Maciek")  # usunęło pierwszy napotkany
+print(lista)  # ['Karolina', 'Mikołaj', 'Marta', 'Anna', 'Zenek', 'Maciek']
+
+# lista.remove("Natasza") # ValueError: list.remove(x): x not in list
+print("Marta" in lista)  # True
+print("Marcin" in lista)  # False
+
+print(lista.remove("Marta"))  # None
+print(lista)  # ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek']
+
+lista.append("Marta")
+lista.append("Marta")
+lista.append("Marcin")
+print(lista)  # ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek', 'Marta', 'Marta', 'Marcin']
+print(lista.index("Marta"))  # indeks numer 5
