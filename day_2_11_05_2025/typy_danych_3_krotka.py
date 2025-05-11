@@ -112,3 +112,28 @@ print(f"{name1=}, {name2=}, {name3=}")
 name1, *name2, name3 = tupla_names
 print(f"{name1=}, {name2=}, {name3=}")
 # name1='Radek', name2=['Tomek', 'Zenek'], name3='Bartek'
+
+tupla_zadanie = "OLA", "Ania", "Ada", "Gabi", "Kasia", "Paulina"
+i1, i2, *i3, i4 = tupla_zadanie
+print(i1, i2, i3, i4)  # OLA Ania ['Ada', 'Gabi', 'Kasia'] Paulina
+"""
+  Prints the values to a stream, or to sys.stdout by default.
+
+    sep
+      string inserted between values, default a space.
+    end
+      string appended after the last value, default a newline.
+    file
+      a file-like object (stream); defaults to the current sys.stdout.
+    flush
+      whether to forcibly flush the stream.
+  """
+print("Jeden", "Dwa", "Trzy")  # "Jeden Dwa Trzy"
+print("Jeden", "Dwa", "Trzy", sep="")  # "JedenDwaTrzy",  sep="" - pusty separator
+print("Jeden", "Dwa", "Trzy", sep="=>")  # "Jeden=>Dwa=>Trzy"
+print("Jeden", "Dwa", "Trzy", sep=":")  # "Jeden:Dwa:Trzy"
+print("Jeden", "Dwa", "Trzy", sep=":", end="")  # end="" - pusty znak konca linii, Jeden:Dwa:TrzyDalszy tekst
+print("Dalszy tekst")  # Jeden:Dwa:TrzyDalszy tekst - tekst wypisany w tej samej linii
+print("Radek")  # Radek, wypisze w nowej lini bo porzednia linia ma domyślny znak końca linii end="\n"
+# sep: znak oddzielający elementy wypisywane po przecinku (doyślnie " ")
+# end: znak końca linii (domyślnie "\n" - nowa linia)
