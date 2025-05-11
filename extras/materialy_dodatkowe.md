@@ -131,3 +131,7 @@ https://www.w3schools.com/python/default.asp \
 https://www.hackerrank.com/domains/python \
 https://www.hackerrank.com/domains/python \
 https://stackoverflow.com/questions/63214621/how-to-use-print-statement-in-python
+
+
+# Zbiory
+![img_2.png](img_2.png)

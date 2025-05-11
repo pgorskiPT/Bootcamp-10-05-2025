@@ -114,6 +114,7 @@ print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Zenek', 'Marta', 'Anna', 'Ze
 print("Numer indeksu dla Zenka:", ind)  # Numer indeksu dla Zenka: 3
 print(lista.pop(ind))  # Zenek
 print(lista)  # ['Karolina', 'Maciek', 'Mikołaj', 'Marta', 'Anna', 'Zenek']
+print(lista.pop()) # Zenek, usunie ostatni element
 
 # usunięcie po elemencie
 lista.append("Maciek")
