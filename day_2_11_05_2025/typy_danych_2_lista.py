@@ -133,3 +133,29 @@ lista.append("Marta")
 lista.append("Marcin")
 print(lista)  # ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek', 'Marta', 'Marta', 'Marcin']
 print(lista.index("Marta"))  # indeks numer 5
+
+a = 1
+b = 3
+print(f"{a=}, {b=}")  # a=1, b=3
+a = b
+print(f"{a=}, {b=}")  # a=3, b=3
+b = 7
+print(f"{a=}, {b=}")  # a=3, b=7
+
+lista_4 = lista  # -> a = b, przypiasnie referencji, adresu w pamięci
+print(f"{lista}")
+print(f"{lista_4}")
+# ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek', 'Marta', 'Marta', 'Marcin']
+# ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek', 'Marta', 'Marta', 'Marcin']
+lista_copy = lista.copy()  # kopia elementów listy do nowej listy (nowy adres listy)
+lista.clear()  # usunie elementy listy
+print(f"{lista}")  # []
+print(f"{lista_4}")  # []
+print(f"{lista_copy}")  # ['Karolina', 'Mikołaj', 'Anna', 'Zenek', 'Maciek', 'Marta', 'Marta', 'Marcin']
+# id() - wskazuje na adres pamięci listy
+print(f"adres: {id(lista)=}")
+print(f"adres: {id(lista_4)=}")
+print(f"adres: {id(lista_copy)=}")
+# adres: id(lista)=4372691072
+# adres: id(lista_4)=4372691072
+# adres: id(lista_copy)=4373300672
