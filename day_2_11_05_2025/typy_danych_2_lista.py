@@ -211,10 +211,22 @@ print(liczby + liczby_3)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
 liczby_4 = liczby + liczby_3
 print(liczby_4)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
 
-print(liczby)
+print(liczby)  # [999, 687, 45, 34, 22, 13.34]
 # nadpiac czwarty element
 # wypisac ostatni eleemnt po indeksie dodatnim i ujemnym
 # zrobić slice(wycinanie) jedno dodatnie, jedno ujemne
 # usunąc z listy po indeksie i wypisac usunięty
 # usunąć z listy po elemencie
 # wyświwetlić listę odwróconą bez zmiany listy
+liczby[3] = 666
+print(liczby[-1])  # 13.34
+print(liczby[len(liczby) - 1])  # 13.34
+print(liczby[5])  # 13.34
+print(liczby[1:3])  # [687, 45]
+print(liczby[-5:-2])  # [687, 45, 666]
+print(liczby.pop(3))  # , 666, usunięty indeks 3
+print(liczby)  # [999, 687, 45, 22, 13.34]
+liczby.remove(22)  # 22 - liczba z listy, nie indeks
+print(liczby)  # [999, 687, 45, 13.34]
+print(liczby[::-1])  # [13.34, 45, 687, 999]
+print(liczby)  # [999, 687, 45, 13.34]
