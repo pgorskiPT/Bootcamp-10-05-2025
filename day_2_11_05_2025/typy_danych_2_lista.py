@@ -206,11 +206,6 @@ print(liczby_3)  # [1, 12, 5, 8, 3]
 lista_osoby.reverse()
 print(lista_osoby)  # ['zenek', 'tomek', 'radek', 'magda', 'karolina', 'ania']
 
-# łączenie list, dostajemy nową kolekcję
-print(liczby + liczby_3)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
-liczby_4 = liczby + liczby_3
-print(liczby_4)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
-
 print(liczby)  # [999, 687, 45, 34, 22, 13.34]
 # nadpiac czwarty element
 # wypisac ostatni eleemnt po indeksie dodatnim i ujemnym
@@ -230,3 +225,32 @@ liczby.remove(22)  # 22 - liczba z listy, nie indeks
 print(liczby)  # [999, 687, 45, 13.34]
 print(liczby[::-1])  # [13.34, 45, 687, 999]
 print(liczby)  # [999, 687, 45, 13.34]
+
+# łączenie list, dostajemy nową kolekcję
+print(liczby + liczby_3)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
+liczby_4 = liczby + liczby_3
+print(liczby_4)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
+
+liczby_5 = [1, 2, 3, 4, 5]
+liczby_6 = [6, 7, 8, 9]
+# nie tworzy nowej listy
+liczby_5.extend(liczby_6)
+print(liczby_5)  # [1, 2, 3, 4, 5, 6, 7, 8, 9], dokłada do liczby_5 elementy z listy liczby_6
+
+# rozpakowanie sekwencji
+tekst = "Pyth on."
+lista_str = list(tekst)
+print(lista_str)  # ['P', 'y', 't', 'h', ' ', 'o', 'n', '.']
+
+lista_str_pusta = []
+lista_str_pusta.extend(tekst)
+print(lista_str_pusta)  # ['P', 'y', 't', 'h', ' ', 'o', 'n', '.']
+
+lista_str2 = [tekst]
+print(lista_str2)  # ['Pyth on.']
+
+lista_str_pusta = []
+lista_str_pusta.append(tekst)
+print(lista_str_pusta)  # ['Pyth on.']
+
+
