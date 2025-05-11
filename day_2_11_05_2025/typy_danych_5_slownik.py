@@ -68,8 +68,8 @@ print(dict_with_dict)
 
 # tworzenie słownika z sekwencji kluczy
 keys = {'a', 'b', 'c', 'd'}
-my_dict = dict.fromkeys(keys)
-print(my_dict)  # {'c': None, 'b': None, 'a': None, 'd': None}
+my_dict_from_keys = dict.fromkeys(keys)
+print(my_dict_from_keys)  # {'c': None, 'b': None, 'a': None, 'd': None}
 # domyślnie jako wartość przyjmuje None
 
 value = 10
@@ -92,3 +92,19 @@ print(list_unique)  # [1, 2, 3, 4, 5]
 
 print(list(dict.fromkeys(keys)))  # [1, 2, 3, 4, 5], w jedej linijce
 
+# wypisanie wartości dla kluczy ze słownika
+print(dict_with_dict['A'])  # ['asif', 'jhon', 'maria']
+
+print(my_dict)  # {'A': 'one', 'B': 'two', 'C': 'three', 'D': 'four'}
+print(my_dict["A"])  # one
+
+print(dict_with_integer[1])  # one
+print(dict_with_all['C'])  # {10, 'Name', 'age'}
+
+# print(my_dict_4['e']) # KeyError: 'e'
+
+print(my_dict_4.get('a'))  # dla klucza 'a' -> [10, 20, 30]
+print(my_dict_4.get('e'))  # None - oznacza brak klucza w słowniku
+# możemy ustawić wartość domyślną jaka będzie zwracana gdy nie ma klucza w słowniku
+print(my_dict_4.get('e', "Nie ma"))  # Nie ma - brak klucza
+print(my_dict_4.get('a', "Nie ma"))  # [10, 20, 30]
