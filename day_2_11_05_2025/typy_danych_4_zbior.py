@@ -108,3 +108,24 @@ print(lista_temp)  # [[2, 3], [4, 5]], lista w liscie, python nie ma Array
 
 nested_set = {1, frozenset({2, 3})}
 print(nested_set)  # {1, frozenset({2, 3})}
+
+zb3 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+print(sum(zb3))  # 45, suma elementów zbioru
+print(max(zb3))  # 9, wartość maksymalna
+print(min(zb3))  # 1, wartość minimalna
+print(len(zb3))  # długość zbioru 9
+print(sorted(zb3))  # zwróci listę [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Czy zbiór b jest podzbiorem zbioru a? issubset()
+a = {1, 2, 3}
+b = {1, 2}
+print(b.issubset(a))  # True
+
+krotka = tuple(zb3)
+lista = list(zb3)
+
+print(krotka)  # (1, 2, 3, 4, 5, 6, 7, 8, 9)
+print(9 in krotka)  # True
+
+print(lista)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(10 in lista)  # False
