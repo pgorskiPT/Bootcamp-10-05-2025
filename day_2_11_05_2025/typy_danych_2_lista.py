@@ -159,3 +159,62 @@ print(f"adres: {id(lista_copy)=}")
 # adres: id(lista)=4372691072
 # adres: id(lista_4)=4372691072
 # adres: id(lista_copy)=4373300672
+
+liczby = [45, 999, 34, 22, 13.34, 687]
+print(liczby)  # [45, 999, 34, 22, 13.34, 687]
+print(type(liczby))  # <class 'list'>
+
+liczby.sort()  # sortowanie listy
+print(liczby)  # [13.34, 22, 34, 45, 687, 999]
+
+liczby_a = [45, 999, 34, 22, 13.34, 687, "A"]
+print(liczby_a)  # [45, 999, 34, 22, 13.34, 687, 'A']
+print(type(liczby_a))  # <class 'list'>
+
+# nie zawsze wszystkie metody zadziałają w kolekcjach mieszanych
+# liczby_a.sort() # TypeError: '<' not supported between instances of 'str' and 'int'
+
+lista_osoby = ['radek', 'tomek', 'zenek', 'ania', 'karolina', 'magda']
+lista_osoby.sort()
+print(lista_osoby)  # ['ania', 'karolina', 'magda', 'radek', 'tomek', 'zenek']
+
+lista_alfabet = ['a', "z", "p", 'd']
+lista_alfabet.sort()
+print(lista_alfabet)  # ['a', 'd', 'p', 'z']
+
+lista_alfabet_pol = ['a', "z", "ą", "p", "ń", 'd']
+lista_alfabet_pol.sort()
+print(lista_alfabet_pol)  # ['a', 'd', 'p', 'z', 'ą', 'ń']
+print(ord("z"))  # 122, ord() - wypisuje kod ascii dla znaku
+print(ord("ą"))  # 261
+
+# sortowanie i odwrócenie w jednym kroku
+liczby.sort(reverse=True)
+print(liczby)  # [999, 687, 45, 34, 22, 13.34]
+
+# wypisanie w odwrotnej kolejnosci bez zmiany bazowej listy
+print(liczby[::-1])  # krok -1, [start:stop:krok], [13.34, 22, 34, 45, 687, 999]
+print(liczby[0:4:2])  # [999, 45]
+print(liczby)  # [999, 687, 45, 34, 22, 13.34]
+print(liczby[-3:0:-1])  # [34, 45, 687]
+
+# odwrócenie kolekcji, bez sortowania
+liczby_3 = [3, 8, 5, 12, 1]
+liczby_3.reverse()
+print(liczby_3)  # [1, 12, 5, 8, 3]
+
+lista_osoby.reverse()
+print(lista_osoby)  # ['zenek', 'tomek', 'radek', 'magda', 'karolina', 'ania']
+
+# łączenie list, dostajemy nową kolekcję
+print(liczby + liczby_3)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
+liczby_4 = liczby + liczby_3
+print(liczby_4)  # [999, 687, 45, 34, 22, 13.34, 1, 12, 5, 8, 3]
+
+print(liczby)
+# nadpiac czwarty element
+# wypisac ostatni eleemnt po indeksie dodatnim i ujemnym
+# zrobić slice(wycinanie) jedno dodatnie, jedno ujemne
+# usunąc z listy po indeksie i wypisac usunięty
+# usunąć z listy po elemencie
+# wyświwetlić listę odwróconą bez zmiany listy
