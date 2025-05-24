@@ -6,3 +6,8 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/inspectionProfiles/profiles_settings.xml
+/Bootcamp-10-05-2025.iml
+/misc.xml
+/modules.xml
+/vcs.xml
