@@ -119,3 +119,54 @@ for i, o in enumerate(imiona, start=1):  # numeruje od 1
 # 2 Tomek
 # 3 Zenek
 # 4 Zbyszek
+
+ludzie = ['Janek', "Radek", "Tomek", "Marek"]
+wiek = [45, 40, 18, 23]
+
+# Radek 40
+for i in range(len(ludzie)):
+    print(ludzie[i], wiek[i])
+    # Janek 45
+    # Radek 40
+    # Tomek 18
+    # Marek 23
+
+ludzie = ['Janek', "Radek", "Tomek", "Marek", "Ania"]
+wiek = [45, 40, 18, 23]
+
+# for i in range(len(ludzie)):
+#     print(ludzie[i], wiek[i])  # IndexError: list index out of range
+
+# zip() - łaczy kolekcje
+for i in zip(ludzie, wiek):
+    print(i)
+# ('Janek', 45)
+# ('Radek', 40)
+# ('Tomek', 18)
+# ('Marek', 23)
+for l, w in zip(ludzie, wiek):
+    print(l, w)
+# Janek 45
+# Radek 40
+# Tomek 18
+# Marek 23
+
+# 0 Radek 40
+for i in enumerate(zip(ludzie, wiek)):
+    print(i)
+    # (0, ('Janek', 45))
+    # (1, ('Radek', 40))
+    # (2, ('Tomek', 18))
+    # (3, ('Marek', 23))
+a, b = (3, ('Marek', 23))
+print(a, b)  # 3 ('Marek', 23)
+c, d = ('Marek', 23)
+print(c, d)  # Marek 23
+print(a, c, d)  # 3 Marek 23
+a, (c, d) = (3, ('Marek', 23))  # musimy jawnie wskazać wewnętrzną krotkę
+for i, (o, w) in enumerate(zip(ludzie, wiek)):
+    print(f"Numer: {i}, Imię: {o}, Wiek: {w}")
+# Numer: 0, Imię: Janek, Wiek: 45
+# Numer: 1, Imię: Radek, Wiek: 40
+# Numer: 2, Imię: Tomek, Wiek: 18
+# Numer: 3, Imię: Marek, Wiek: 23
