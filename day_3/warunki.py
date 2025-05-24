@@ -112,3 +112,29 @@ if alert_system in alert_dict:
 else:
     print("Inny system")
 # Krytyczny
+
+
+# zrobic program test z...
+# dodać punktację (3 pytania)
+punkty = 0
+odp = input("Podaj datę Chrztu Polski")  # str
+if odp == "966":
+    # punkty = punkty + 1
+    punkty += 1
+    print("Odpowiedź prawidłowa")
+else:
+    print('Bład')
+
+odp = input("Na jakim kontynencie leży Nepal")
+if odp.casefold() == "Azja".casefold():
+    punkty += 1
+    print("Odpowiedź prawidłowa")
+else:
+    print("Bład")
+
+print("Zdobyte punkty:", punkty)
+# Podaj datę Chrztu Polski966
+# Odpowiedź prawidłowa
+# Na jakim kontynencie leży Nepalasdk
+# Bład
+# Zdobyte punkty: 1
