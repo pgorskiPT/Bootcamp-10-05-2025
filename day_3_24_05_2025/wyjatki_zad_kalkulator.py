@@ -5,3 +5,4 @@
 # wyswietlic menu z działaniami
 # pobrac dane
 # wyświetlic wynik wybranego działania
+# ```python```
