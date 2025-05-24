@@ -69,4 +69,11 @@ print(f"Rabat wynosi {rabacik}")  # Rabat wynosi 25
 rabat = 25 if suma_zam > 150 else 0
 print(f"Rabat wynosi {rabat}")  # Rabat wynosi 25
 
-#
+# zasymuluj system zbierania logów
+# w zmiennej otrzymamy typ systemu: console, email, inny
+# w zależności od zawartości zmiennej:
+# console -> "Stało się coś strasznego"
+# email -> "System email"
+# jezeli będzie to system email to należy do listy błedów dodać opis
+# druga zmienna przechowuje typ błedu
+# error, medium, inny
