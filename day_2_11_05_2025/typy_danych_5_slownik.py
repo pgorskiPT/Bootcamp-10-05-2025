@@ -115,3 +115,87 @@ print(my_dict5['DDB'])  # 1991
 print(my_dict5.get("DDB"))  # 1991
 
 # nadpisanie wartości dla klucza
+my_dict5['DDB'] = '1980'  # nadpisanie str
+print(my_dict5)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': '1980', 'Address': 'Warsaw'}
+print(type(my_dict5['DDB']))  # <class 'str'>
+
+my_dict5['Address'] = "Warsaw Centrum"
+print(my_dict5)  # {'Name': 'Radek', 'ID': 12345, 'DDB': '1980', 'Address': 'Warsaw Centrum'}
+
+dict1 = {"DDB": 1995}
+print(dict1)  # {'DDB': 1995}
+print(type(dict1))  # <class 'dict'>
+
+# update słownik innym słownikiem
+my_dict5.update(dict1)
+print(my_dict5)  # {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum'}
+
+# dodanie klucza do słownika
+my_dict5['Job'] = "Developer"
+print(my_dict5)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum', 'Job': 'Developer'}
+
+dict2 = {'cpi': 3.41}  # float, liczby zmiennoprzecinkowe
+print(dict2)  # {'cpi': 3.41}
+
+# update słownika
+# jesli klucz w docelowym słowniku nie istnieje zostanie dodany
+# docelowy słownik my_dict5
+my_dict5.update(dict2)
+print(my_dict5)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum', 'Job': 'Developer', 'cpi': 3.41}
+
+# usnięcie elementu ze słownika
+print(my_dict5.pop("cpi"))  # 3.41
+print(my_dict5)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum', 'Job': 'Developer'}
+
+# usunięcie ostatniego elemntu ze słownika
+print(my_dict5.popitem())  # ('Job', 'Developer')
+print(my_dict5)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum'}
+
+# usunięcie po kluczu
+del my_dict5['ID']
+print(my_dict5)
+# {'Name': 'Radek', 'DDB': 1995, 'Address': 'Warsaw Centrum'}
+
+# usunięcie wszystkich elementów ze słownika
+my_dict5.clear()
+print(my_dict5)  # {}
+
+# usunięcie z pamięci
+del my_dict5
+# my_dict5 nie istnieje - został usuniety z pamięci
+# print(my_dict5) # NameError: name 'my_dict5' is not defined. Did you mean: 'my_dict'?
+
+# zamiana klucza w słowniku
+slownik = {"stary_klucz": "wartosc"}
+slownik['nowy_klucz'] = slownik.pop('stary_klucz')
+print(slownik)  # {'nowy_klucz': 'wartosc'}
+
+# kopiowanie słownika
+my_dict5 = {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum', 'Job': 'Developer', 'cpi': 3.41}
+# kopia referencji
+my_dict5_copy_ref = my_dict5
+print(id(my_dict5_copy_ref))  # 4350392640
+print(id(my_dict5))  # 4350392640
+
+# kopia elementów słownika do drugiego słownika
+my_dict5_copy = my_dict5.copy()
+my_dict5.clear()
+print(my_dict5_copy)
+# {'Name': 'Radek', 'ID': 12345, 'DDB': 1995, 'Address': 'Warsaw Centrum', 'Job': 'Developer', 'cpi': 3.41}
+print(my_dict5)  # {}
+print(my_dict5_copy_ref)  # {}
+
+print(f"{id(my_dict5)}")  # 4310759744
+print(f"{id(my_dict5_copy_ref)}")  # 4310759744
+print(f"{id(my_dict5_copy)}")  # 4310759616 - inny adres, kopia elementów nie referencji
+
+dict_small = {"x": 3}
+dict_small.update([('y', 3), ("z", 7)])
+# [('y',3), ("z",7)] -> lista krotek
+print(dict_small)  # {'x': 3, 'y': 3, 'z': 7}
+print(dict_small.items())  # dict_items([('x', 3), ('y', 3), ('z', 7)])
