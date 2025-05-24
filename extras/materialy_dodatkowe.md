@@ -136,5 +136,9 @@ https://stackoverflow.com/questions/63214621/how-to-use-print-statement-in-pytho
 # Zbiory
 ![img_2.png](img_2.png)
 
-# casfold porównanie
+## casfold porównanie
 https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
+
+## Sortowanie algorytm
+### Pokazuje zmiany sterowania przepływem programu
+![img_3.png](img_3.png)
