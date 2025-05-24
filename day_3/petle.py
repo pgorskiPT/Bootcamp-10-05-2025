@@ -1,5 +1,6 @@
 # pętla - możliwośź wykonannia tego samego fragmentu kodu wielokrotnie
 # for - pętla iteracyjna
+import random
 
 for i in range(10):  # od 0 do 9
     print(i)
@@ -37,3 +38,43 @@ for i in my_string:  # itracja po kolekcji, działa aż dojdzie do ostatniego el
 
 for i in range(len(my_string)):
     print(my_string[i])
+
+print(30 * "-")
+# przerobic lotto na pętle
+lista_wynik = []
+lista_kule = list(range(1, 50))
+for _ in range(6):
+    wyn = random.choice(lista_kule)  # losuje jeden element
+    # print(wyn)
+    lista_wynik.append(wyn)
+    lista_kule.remove(wyn)
+
+print(lista_wynik)  # [13, 35, 44, 48, 25, 46]
+lista_wynik.sort()
+print("Posrtowany wynik:", lista_wynik)  # Posrtowany wynik: [3, 11, 23, 32, 46, 48]
+
+for i in range(10):
+    if i % 2 == 0:  # % modulo, reszta z dzielenia
+        print(i, "parzysta")
+# 0 parzysta
+# 2 parzysta
+# 4 parzysta
+# 6 parzysta
+# 8 parzysta
+
+# list comprehensions
+list3 = [j for j in range(1, 10) if j % 2 == 0]
+print(list3)  # [2, 4, 6, 8]
+
+for c in list3:
+    if c == 2:
+        c += 1  # c = c + 1
+        print("Tylko jeśli c=2")
+    print('Przy każdym przejsciu pętli', c)
+# Tylko jeśli c=2
+# Przy każdym przejsciu pętli 3
+# Przy każdym przejsciu pętli 4
+# Przy każdym przejsciu pętli 6
+# Przy każdym przejsciu pętli 8
+
+

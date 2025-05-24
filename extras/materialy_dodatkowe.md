@@ -145,3 +145,6 @@ https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
 
 # operator warunkowy
 ![img_4.png](img_4.png)
+
+# list comprehensions
+![img_5.png](img_5.png)
