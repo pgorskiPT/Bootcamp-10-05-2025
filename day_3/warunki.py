@@ -34,26 +34,39 @@ if odp == "Radek":
 else:  # w przeciwnym przypadku
     print("Inny pacjent")  # Inny pacjent
 
-podatek = 0.9
-zarobki = int(input("Podaj dochód"))
-# pop ierwszym spełnionym warunku wychodzi z drzewka
-# kolejnośc warunków ma znaczenie
-# elif - używamy po to by sprawdzić dokładnie jeden warunek
-if zarobki < 10000:
-    podatek = 0.0
-elif zarobki < 30_000:
-    podatek = 0.2
-elif zarobki < 100_000:
-    podatek = 0.4
-else:  # działannie domyślne
-    podatek = 0.9
+# podatek = 0.9
+# zarobki = int(input("Podaj dochód"))
+# # pop ierwszym spełnionym warunku wychodzi z drzewka
+# # kolejnośc warunków ma znaczenie
+# # elif - używamy po to by sprawdzić dokładnie jeden warunek
+# if zarobki < 10000:
+#     podatek = 0.0
+# elif zarobki < 30_000:
+#     podatek = 0.2
+# elif zarobki < 100_000:
+#     podatek = 0.4
+# else:  # działannie domyślne
+#     podatek = 0.9
+#
+# print(f"Płacisz {zarobki * podatek} podatek")
+#
+# # tu ostatni nadpisze poprzednie jesli będzie spełniony
+# if zarobki < 10000:
+#     podatek = 0
+#
+# if zarobki < 1999:
+#     podatek = 0.4
+# # Przerwa do 11:20
 
-print(f"Płacisz {zarobki * podatek} podatek")
+suma_zam = 250
+if suma_zam > 150:
+    rabacik = 25
+else:
+    rabacik = 0
 
-# tu ostatni nadpisze poprzednie jesli będzie spełniony
-if zarobki < 10000:
-    podatek = 0
+print(f"Rabat wynosi {rabacik}")  # Rabat wynosi 25
 
-if zarobki < 1999:
-    podatek = 0.4
-# Przerwa do 11:20
+rabat = 25 if suma_zam > 150 else 0
+print(f"Rabat wynosi {rabat}")  # Rabat wynosi 25
+
+#

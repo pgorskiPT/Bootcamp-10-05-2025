@@ -142,3 +142,6 @@ https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
 ## Sortowanie algorytm
 ### Pokazuje zmiany sterowania przepływem programu
 ![img_3.png](img_3.png)
+
+# operator warunkowy
+![img_4.png](img_4.png)
