@@ -93,7 +93,7 @@ print(list_unique)  # [1, 2, 3, 4, 5]
 print(list(dict.fromkeys(keys)))  # [1, 2, 3, 4, 5], w jedej linijce
 
 # wypisanie wartości dla kluczy ze słownika
-print(dict_with_dict['A'])  # ['asif', 'jhon', 'maria']
+print(dict_with_dict['A'])  # ['asif', 'john', 'maria']
 
 print(my_dict)  # {'A': 'one', 'B': 'two', 'C': 'three', 'D': 'four'}
 print(my_dict["A"])  # one
@@ -108,3 +108,10 @@ print(my_dict_4.get('e'))  # None - oznacza brak klucza w słowniku
 # możemy ustawić wartość domyślną jaka będzie zwracana gdy nie ma klucza w słowniku
 print(my_dict_4.get('e', "Nie ma"))  # Nie ma - brak klucza
 print(my_dict_4.get('a', "Nie ma"))  # [10, 20, 30]
+
+my_dict5 = {"Name": "Radek", "ID": 12345, "DDB": 1991, 'Address': "Warsaw"}
+print(my_dict5)  # {'Name': 'Radek', 'ID': 12345, 'DDB': 1991, 'Address': 'Warsaw'}
+print(my_dict5['DDB'])  # 1991
+print(my_dict5.get("DDB"))  # 1991
+
+# nadpisanie wartości dla klucza
