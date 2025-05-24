@@ -215,7 +215,7 @@ print(dict_small.items())  # dict_items([('x', 3), ('y', 3), ('z', 7)])
 ang_pol = {'name': 'imie', "cat": "kot", 'water': "woda"}
 print('-------- Słownik pol-ang --------')
 print("Mamy takie słowka w słowniku", ang_pol.keys())
-odp = input("Podaj słowko do przetłumaczenia")
+# odp = input("Podaj słowko do przetłumaczenia")
 # print(f"{odp.strip()} to: {ang_pol[odp.strip()]}")
 # print(f"{odp.strip().lower()} to: {ang_pol[odp.strip().lower()]}")
 # Podaj słowko do przetłumaczeniaCat
@@ -238,10 +238,42 @@ print(word1.casefold() == word2.casefold())  # True
 # False
 # True
 # cat to: kot
-print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold())}")
-print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold(), "Nie ma w słowniku")}")
+# print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold())}")
+# print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold(), "Nie ma w słowniku")}")
 # Podaj słowko do przetłumaczeniaCot
 # False
 # True
 # cot to: None
 # cot to: Nie ma w słowniku
+#
+# a = input("Podaj liczbę")
+# print(a)
+# print(type(a))
+# # Podaj liczbę5
+# # 5
+# # <class 'str'>
+# b = input("Podaj drugą liczbę")
+# print("Wynik (konkatenacja):", a + b)  # Wynik: 56, konkatenacja
+# print("Wynik na liczbach: ", int(a) + int(b))  # Wynik na liczbach:  9, int() - rzutowanie
+#
+# # inny sposób
+# a = float(input("Podaj liczbę"))
+# b = float(input("Podaj drugą liczbę"))
+# print(a + b)
+# # Podaj liczbę4
+# # Podaj drugą liczbę5
+# # 9.0
+
+print(my_dict5_copy)
+print("Name" in my_dict5_copy)
+print("Temat" in my_dict5_copy)
+# True
+# False
+
+# Return True if bool(x) is True for all values x in the iterable.
+# Sprawdza czy wszystkie elementy słownika po operacji bool(x) zrócą True
+print(all(my_dict5_copy))  # True
+
+# Return True if bool(x) is True for any x in the iterable.
+# sprawdza czy jakikolwiek zwróci False
+print(any(my_dict5_copy))  # True
