@@ -77,3 +77,38 @@ print(f"Rabat wynosi {rabat}")  # Rabat wynosi 25
 # jezeli będzie to system email to należy do listy błedów dodać opis
 # druga zmienna przechowuje typ błedu
 # error, medium, inny
+alert_system = "email"
+error = "error"
+lista_b = []
+
+if alert_system == "console":
+    print("Stało się coś strasznego")
+elif alert_system == "email":
+    print("System email")
+    if error == "error":
+        lista_b.append("Krytyczny")
+    elif error == "medium":
+        lista_b.append("Ostrzeżenie")
+    else:
+        lista_b.append('Inny')
+else:
+    print('Inny system')
+print(lista_b)  # ['Krytyczny']
+# Stało się coś strasznego
+# []
+
+alert_dict = {'console': "Coś poszło nie tak",
+              'email': {'error': "Krytyczny", "medium": "Ostrzeżenie"}}
+
+if alert_system in alert_dict:
+    if alert_system == 'console':
+        print(alert_dict.get(alert_system))
+    elif alert_system == 'email':
+        print("System email")
+        print(alert_dict.get(alert_system))
+        if error in alert_dict[alert_system]:
+            errors = alert_dict[alert_system]  # {'error': 'Krytyczny', 'medium': 'Ostrzeżenie'}
+            print(errors[error])
+else:
+    print("Inny system")
+# Krytyczny
