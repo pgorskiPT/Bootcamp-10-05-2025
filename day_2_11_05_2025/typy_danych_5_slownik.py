@@ -2,6 +2,7 @@
 # {'klucz' : 'wartosc'}
 # klucze nie mogą sie powtarzać
 # słownik jest odpowiednikiem jsona w pythonie
+from ctypes.wintypes import PWORD
 
 my_dict = {"A": "one", 'B': 'two', "C": 'three', "D": 'four'}
 print(my_dict)  # {'A': 'one', 'B': 'two', 'C': 'three', 'D': 'four'}
@@ -199,3 +200,48 @@ dict_small.update([('y', 3), ("z", 7)])
 # [('y',3), ("z",7)] -> lista krotek
 print(dict_small)  # {'x': 3, 'y': 3, 'z': 7}
 print(dict_small.items())  # dict_items([('x', 3), ('y', 3), ('z', 7)])
+
+# napisac program, który będzie działąl jak słownik angielsko-polski
+# wyświetla dostępne słowa
+# pobiera słowo od użytkownika
+# wyświetla tłumaczenie
+
+# input() - pobiera dane od użytkownika
+# odp = input("Podaj imię")
+# print(odp)
+# Podaj imięradek
+# radek
+
+ang_pol = {'name': 'imie', "cat": "kot", 'water': "woda"}
+print('-------- Słownik pol-ang --------')
+print("Mamy takie słowka w słowniku", ang_pol.keys())
+odp = input("Podaj słowko do przetłumaczenia")
+# print(f"{odp.strip()} to: {ang_pol[odp.strip()]}")
+# print(f"{odp.strip().lower()} to: {ang_pol[odp.strip().lower()]}")
+# Podaj słowko do przetłumaczeniaCat
+# cat to: kot
+
+# ß
+word1 = "gross"
+word2 = "Groß"
+print(word1.lower() == word2.lower())  # False
+""" Return a version of the string suitable for caseless comparisons. """
+# Przekształca wszystkie duże litery na małe
+# dostosowuje tekst zgodnie z zasadami językowymi Unicode
+# znaki specjalne, takie jak ß w języku niemieckim, zamieni na ss.
+# Znaki z akcentami mogą być uproszczone w zależności od kontekstu
+# https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
+print(word1.casefold() == word2.casefold())  # True
+
+# print(f"{odp.strip().casefold()} to: {ang_pol[odp.strip().casefold()]}")
+# Podaj słowko do przetłumaczenia Cat
+# False
+# True
+# cat to: kot
+print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold())}")
+print(f"{odp.strip().casefold()} to: {ang_pol.get(odp.strip().casefold(), "Nie ma w słowniku")}")
+# Podaj słowko do przetłumaczeniaCot
+# False
+# True
+# cot to: None
+# cot to: Nie ma w słowniku
