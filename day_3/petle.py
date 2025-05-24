@@ -77,4 +77,45 @@ for c in list3:
 # Przy każdym przejsciu pętli 6
 # Przy każdym przejsciu pętli 8
 
+imiona = ['Radek', "Tomek", 'Zenek', "Zbyszek"]
+for p in imiona:
+    print(p)
+# Radek
+# Tomek
+# Zenek
+# Zbyszek
 
+# 0 Radek
+for i in range(len(imiona)):  # range(4) 0 do 3
+    print(i, imiona[i])
+
+for p in imiona:
+    print(imiona.index(p), p)
+# 0 Radek
+# 1 Tomek
+# 2 Zenek
+# 3 Zbyszek
+
+# enumerate() - numeruje kolekcje i zwraca indeks i element kolekcji
+for i in enumerate(imiona):
+    print(i)
+# (0, 'Radek')
+# (1, 'Tomek')
+# (2, 'Zenek')
+# (3, 'Zbyszek')
+a, b = (3, 'Zbyszek')  # rozpakowanie krotki
+print(a, b)
+
+for i, o in enumerate(imiona):
+    print(i, o)
+# 0 Radek
+# 1 Tomek
+# 2 Zenek
+# 3 Zbyszek
+
+for i, o in enumerate(imiona, start=1):  # numeruje od 1
+    print(i, o)
+# 1 Radek
+# 2 Tomek
+# 3 Zenek
+# 4 Zbyszek
