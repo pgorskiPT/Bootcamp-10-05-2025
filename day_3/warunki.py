@@ -56,3 +56,4 @@ if zarobki < 10000:
 
 if zarobki < 1999:
     podatek = 0.4
+# Przerwa do 11:20
