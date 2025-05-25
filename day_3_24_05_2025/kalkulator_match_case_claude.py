@@ -35,4 +35,4 @@ while True:  # 1. Tworzymy nieskończoną pętlę – program działa, dopóki n
                 print("Działanie wykonane poprawnie")
         case _:  # 20. Każda inna opcja (poza 1-5) nieprawidłowy wybór
             print("Nieprawidłowa opcja, zakończenie programu.")  # 21. Komunikat o błędzie
-            break  # 22. Przerywamy pętlę kończymy program
+            # break  # 22. Przerywamy pętlę kończymy program
