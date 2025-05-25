@@ -37,3 +37,14 @@ with open('nasze_dane.json', "r") as f:
 print(data)  # {'name': 'Radek', 'age': 40, 'czy_pali': None}
 print(type(data))  # <class 'dict'>
 print(data['name'])  # Radek
+
+# zamiana słownika na json - odpowiadający mu str
+json_text = json.dumps(data)
+print(json_text)  # {"name": "Radek", "age": 40, "czy_pali": null}
+print(type(json_text))  # <class 'str'>
+
+# zamiana jsona na słownik
+dict_json = json.loads(json_text)
+print(dict_json)  # {'name': 'Radek', 'age': 40, 'czy_pali': None}
+print(type(dict_json))  # <class 'dict'>
+print(dict_json['name'])  # Radek
