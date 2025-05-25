@@ -65,3 +65,4 @@ is now: {product['price']}""")
 # is now: 160.0
 # Price for sku: 4, date: 2025-05-25
 # is now: 40.0
+# Przerwa do 11:05
