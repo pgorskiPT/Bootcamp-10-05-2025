@@ -12,4 +12,4 @@ for file_path in txt_files:
 # Plik: file_1.txt, rozmiar: 0 znaków.
 # Plik: nowy.txt, rozmiar: 9 znaków.
 # Plik: results.txt, rozmiar: 6 znaków.
-# Przerwa 5 minut
+# Przerwa 5 minut 15:05
