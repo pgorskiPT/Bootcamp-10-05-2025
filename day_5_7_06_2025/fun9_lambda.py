@@ -55,3 +55,36 @@ print(wiek(10))  # nastolatek
 print(wiek(17))  # nastolatek
 print(wiek(18))  # dorosły
 print(wiek(25))  # dorosły
+
+# mapowanie - zmiana danych
+lista = [1, 2, 3, 45, 67, 78, 100, 200, 300]
+
+lista_wyn = []
+for i in lista:
+    lista_wyn.append(i * 2)
+print(lista_wyn)  # [2, 4, 6, 90, 134, 156, 200, 400, 600]
+
+print([i * 2 for i in lista])  # [2, 4, 6, 90, 134, 156, 200, 400, 600]
+
+
+def zmien(x):
+    return x * 2
+
+
+lista_wyn_f = []
+for i in lista:
+    lista_wyn_f.append(zmien(i))
+print(lista_wyn_f)  # [2, 4, 6, 90, 134, 156, 200, 400, 600]
+
+# funkcje wyższego rzędu
+# map() - mapowanie, zmienia dane wg zadanej funkcji
+print(f"Zastosowanie map(): {list(map(zmien, lista))}")  # Zastosowanie map(): [2, 4, 6, 90, 134, 156, 200, 400, 600]
+
+# Lambda jako funkcja anonimowa - nie posiada nazwy
+# uzycie w miejscu deklaracji
+print(f"Zastosowanie map(): {list(map(lambda x: x * 2, lista))}")
+# Zastosowanie map(): [2, 4, 6, 90, 134, 156, 200, 400, 600]
+print(f"Zastosowanie map(): {list(map(lambda x: x * 4, lista))}")
+# Zastosowanie map(): [4, 8, 12, 180, 268, 312, 400, 800, 1200]
+print(f"Zastosowanie map(): {list(map(lambda x: x * 3.67, lista))}")
+# Zastosowanie map(): [3.67, 7.34, 11.01, 165.15, 245.89, 286.26, 367.0, 734.0, 1101.0]
