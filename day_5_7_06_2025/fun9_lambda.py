@@ -2,6 +2,7 @@
 # skrócony zapis funkcji
 # lambda zwraca wynik - return
 # funkcja anonimowa - deklaracja w miejscu wykonania
+from math import lgamma
 
 odejmij = lambda a, b: a - b  # return
 print(odejmij(6, 8))  # -2
@@ -88,3 +89,25 @@ print(f"Zastosowanie map(): {list(map(lambda x: x * 4, lista))}")
 # Zastosowanie map(): [4, 8, 12, 180, 268, 312, 400, 800, 1200]
 print(f"Zastosowanie map(): {list(map(lambda x: x * 3.67, lista))}")
 # Zastosowanie map(): [3.67, 7.34, 11.01, 165.15, 245.89, 286.26, 367.0, 734.0, 1101.0]
+
+# filtrowanie danych
+# wyciagniecie elemntów spełniających warunek
+
+lista_parzyste = []
+for i in lista:
+    if i % 2 == 0:
+        lista_parzyste.append(i)
+
+print(lista_parzyste)
+
+# filter()
+print(f"Zastosowanie filter(): {list(filter(lambda x: x < 3, lista))}")  # Zastosowanie filter(): [1, 2]
+print(f"Zastosowanie filter(): {list(filter(lambda x: x > 15, lista))}")
+# Zastosowanie filter(): [45, 67, 78, 100, 200, 300]
+# x > 5 i x < 200
+print(f"Zastosowanie filter(): {list(filter(lambda x: x > 5 and x < 200, lista))}")
+# Zastosowanie filter(): [45, 67, 78, 100]
+print(f"Zastosowanie filter(): {list(filter(lambda x: 5 < x < 200, lista))}")
+# Zastosowanie filter(): [45, 67, 78, 100]
+print(f"Zastosowanie filter(): {list(filter(lambda x: x % 2 == 0, lista))}")
+# Zastosowanie filter(): [2, 78, 100, 200, 300]
