@@ -128,3 +128,4 @@ print(f"Alphanumeric: {alphanum}")  # Alphanumeric: ['one', 'two2', 'three3', '8
 
 mix = list(filter(lambda x: x.isnumeric() and not x.isalpha(), list4))
 print(f"Mix: {mix}")  # Mix: ['88', '99', '102']
+# przerwa 13:35
