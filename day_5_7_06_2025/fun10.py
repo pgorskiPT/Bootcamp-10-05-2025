@@ -44,3 +44,22 @@ print(reduce(lambda a, b: bool(a and b), [0, 0, 1, 0, 0]))  # False
 print(reduce(lambda a, b: bool(a and b), [0, 0, 0, 0, 0]))  # False
 print(reduce(lambda a, b: bool(a or b), [0, 0, 0, 0, 0]))  # False
 print(reduce(lambda a, b: bool(a or b), [0, 0, 1, 0, 0]))  # True
+
+
+@lru_cache(maxsize=1000)
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+fib = fibonacci(5)
+print(fib)
+print(fibonacci.cache_info())  # CacheInfo(hits=3, misses=6, maxsize=1000, currsize=6)
+fib = fibonacci(10)
+print(fibonacci.cache_info())  # CacheInfo(hits=9, misses=11, maxsize=1000, currsize=11)
+print(fib)
+# hits - uzyskał wynik bez ponownego obliczania
+fibonacci.cache_clear()
+print(fibonacci.cache_info())
+# CacheInfo(hits=0, misses=0, maxsize=1000, currsize=0)
