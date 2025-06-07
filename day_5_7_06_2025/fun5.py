@@ -38,3 +38,4 @@ zamowienie_napoj()
 # Zamówiono pizza, skłądniki: pieczarki
 # Zamow napoj: herbata
 # Zamow napoj: herbata
+# Przerwa 11:15
