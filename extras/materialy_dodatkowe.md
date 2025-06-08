@@ -148,3 +148,6 @@ https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
 
 # list comprehensions
 ![img_5.png](img_5.png)
+
+# pip freeze
+pip freeze > requirements.txt
