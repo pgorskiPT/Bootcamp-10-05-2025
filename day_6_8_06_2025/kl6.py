@@ -30,11 +30,11 @@ class Manager(Pracownik):
     def oblicz_penja(self):
         return self.pensja + self.premia
 
-    pracownik = Pracownik("Jan", "Kowalski", 8000)
-    pracownik.przedstaw_sie()
-    wynagrodzenie_pracownika = pracownik.oblicz_penja()
-    print(f"Wynagrodzenie dla pracownika {pracownik.imie} {pracownik.nazwisko}: {wynagrodzenie_pracownika}")
 
+pracownik = Pracownik("Jan", "Kowalski", 8000)
+pracownik.przedstaw_sie()
+wynagrodzenie_pracownika = pracownik.oblicz_penja()
+print(f"Wynagrodzenie dla pracownika {pracownik.imie} {pracownik.nazwisko}: {wynagrodzenie_pracownika}")
 
 # Cześć, jestem Jan Kowalski
 # Wynagrodzenie dla pracownika Jan Kowalski: 8000
@@ -45,3 +45,10 @@ wynagrodzenie_manago = manago.oblicz_penja()
 print(f"Wynagrodzenie dla managera {manago.imie} {manago.nazwisko}: {wynagrodzenie_manago}")
 # Cześć, jestem Anna Nowak
 # Wynagrodzenie dla managera Anna Nowak: 15000
+
+lista = [pracownik, manago]
+for o in lista:
+    o.przedstaw_sie()
+
+# Cześć, jestem Jan Kowalski
+# Cześć, jestem Anna Nowak
