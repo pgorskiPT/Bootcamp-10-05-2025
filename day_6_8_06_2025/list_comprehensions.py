@@ -31,3 +31,12 @@ print([i for i in range(10)])  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print([i for i in range(200)])
 print([i for i in range(200) if i % 3 == 0 if i % 9 == 0 if i % 12 == 0])
 # [0, 36, 72, 108, 144, 180]
+
+wyniki = []
+for i in range(200):
+    if i % 3 == 0:
+        if i % 9 == 0:
+            if i % 12 == 0:
+                wyniki.append(i)
+
+print(wyniki)  # [0, 36, 72, 108, 144, 180]
