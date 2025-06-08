@@ -151,3 +151,4 @@ https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
 
 # pip freeze
 pip freeze > requirements.txt
+pip install -r requirements.txt
