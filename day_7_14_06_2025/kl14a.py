@@ -17,16 +17,20 @@ class Person:
     last_name: str
     id: int
 
+    def greet(self):
+        print(self.last_name)
 
-p2 = Person("Jan", "Kowalski", 1)
-print(p2)  # Person(first_name='Jan', last_name='Kowalski', id=1)
 
-p3 = Person("Maciej", "Nowak", 2)
-print(p3)  # Person(first_name='Maciej', last_name='Nowak', id=2)
+if __name__ == '__main__':
+    p2 = Person("Jan", "Kowalski", 1)
+    print(p2)  # Person(first_name='Jan', last_name='Kowalski', id=1)
 
-people = [p2, p3]
-print(people)
-# [Person(first_name='Jan', last_name='Kowalski', id=1), Person(first_name='Maciej', last_name='Nowak', id=2)]
+    p3 = Person("Maciej", "Nowak", 2)
+    print(p3)  # Person(first_name='Maciej', last_name='Nowak', id=2)
 
-with open("dane.pickle", "wb") as stream:
-    pickle.dump(people, stream)
+    people = [p2, p3]
+    print(people)
+    # [Person(first_name='Jan', last_name='Kowalski', id=1), Person(first_name='Maciej', last_name='Nowak', id=2)]
+
+    with open("dane.pickle", "wb") as stream:
+        pickle.dump(people, stream)
