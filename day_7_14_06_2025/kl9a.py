@@ -22,8 +22,14 @@ class SamochodSluzbowyOsobowy(SamochodOsobowy, PojazdSluzbowy):
     pass
 
 
+# class SamochodSluzbowyOsobowy(PojazdSluzbowy, SamochodOsobowy):
+#     pass
+
+
 car1 = SamochodSluzbowyOsobowy()
 car1.serwis()
 car1.rejestracja_sluzbowa()
 # Serwisowanie samochodu osobowego
 # Rejestracja pojazdu służbowego
+
+print(SamochodSluzbowyOsobowy.__mro__)
