@@ -47,3 +47,5 @@ print(f"{osoba2.imie}, {osoba2.nazwisko}")  # Jan, Kowalski
 
 osoba3 = Osoba.z_nazwy_pelnej("Anna Nowak")
 print(f"{osoba3.imie}, {osoba3.nazwisko}")  # Anna, Nowak
+
+# Przerwa 11:15
