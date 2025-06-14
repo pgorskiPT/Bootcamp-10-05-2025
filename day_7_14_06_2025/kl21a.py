@@ -47,7 +47,7 @@ def my_function(x: int, y: int) -> float:
 
 
 try:
-    # result = my_function(4, 5)
+    result = my_function(4, 5)
     # result = my_function(4, 0)
     # result = my_function(0, 2)
     result = my_function("Q", 6)
