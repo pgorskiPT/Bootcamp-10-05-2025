@@ -33,9 +33,11 @@ finally:  # wykonuje się zawsze
 # Podaj lizcbę cąlkowitą dodatnią4
 # Wprowadziłęś poprawną wartośc x: 4
 # Wprowadź kolejne dane
+#
 # Podaj lizcbę cąlkowitą dodatniąa
 # Wystąpił błąd wartości
 # Wprowadź kolejne dane
+#
 # Podaj lizcbę cąlkowitą dodatnią-1
 # Liczba ma być większa od zera
 # Wystąpił wyjątek MyException
