@@ -87,8 +87,8 @@ g.method()
 class H(A, B):
 
     def method(self):
-        B.method(self)
-        super().method()
+        B.method(self) # jawne wywołanie
+        super().method() # A
         print("Dopisane w klasie H")
 
 
