@@ -1,4 +1,8 @@
 # napisać dekorator, który zmieni wynik działania funkcji na duże litery
+from colorama import init, Fore, Style
+
+init(autoreset=True)
+
 
 def uppercase_decorator(func):
     def wrapper():
@@ -12,7 +16,9 @@ def uppercase_decorator(func):
 def bold_decorator(func):
     def wrapper():
         result = func()
-        return f"\033[1m" + result + "\033[0m"
+        # return f"\033[1m" + result + "\033[0m"
+        # return Fore.RED + result  # HELLO WORLD! kolor czerwony
+        return Style.BRIGHT + result  # HELLO WORLD!
 
     return wrapper
 
