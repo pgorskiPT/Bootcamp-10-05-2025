@@ -95,3 +95,25 @@ for i in fibo3:
     # list() - wyczerpało generator
     # nie ma już elementów do odczytania
 
+
+def counter(start=0):
+    n = start
+    while True:
+        result = yield n
+        print(result)  # None
+        if result == "stop":
+            break
+        n += 1
+
+
+c = counter(20)
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(c.send("OK"))  # OK
+
+try:
+    print(c.send("stop"))  # StopIteration
+except StopIteration:
+    print("Koniec")  # Koniec
