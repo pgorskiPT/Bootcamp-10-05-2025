@@ -1,4 +1,6 @@
 # generatory - generuje wartość dla danego argumentu
+import time
+
 
 def kwadrat(n):
     for x in range(n):
@@ -42,3 +44,7 @@ print(next(kwa2))  # 4
 
 print(list(kwa3))
 # [4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361]
+
+for i in kwadrat2(10):
+    print(i)
+    time.sleep(1)  # symuluje długotrwałe zadanie
