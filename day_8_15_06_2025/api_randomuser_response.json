@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Roland",
+        "last": "Jones"
+      },
+      "location": {
+        "street": {
+          "number": 4439,
+          "name": "North Road"
+        },
+        "city": "Stirling",
+        "state": "North Yorkshire",
+        "country": "United Kingdom",
+        "postcode": "H7 0JH",
+        "coordinates": {
+          "latitude": "-9.0250",
+          "longitude": "-49.1331"
+        },
+        "timezone": {
+          "offset": "-10:00",
+          "description": "Hawaii"
+        }
+      },
+      "email": "roland.jones@example.com",
+      "login": {
+        "uuid": "d7178dab-ea0f-4c62-8031-8e065658d8a0",
+        "username": "brownbutterfly582",
+        "password": "262626",
+        "salt": "3Nb0Xxkc",
+        "md5": "2da305568a4062b9e4bd9b8b49135691",
+        "sha1": "0e5813f8870221cd46cbec52f83b1b42967d578d",
+        "sha256": "393983ae8215c1b2621c4e24034ed5a3e7d1d1b24ef1c2ac11faac33c25ddd2a"
+      },
+      "dob": {
+        "date": "1997-07-21T21:59:35.655Z",
+        "age": 27
+      },
+      "registered": {
+        "date": "2003-05-02T19:04:08.463Z",
+        "age": 22
+      },
+      "phone": "019467 40722",
+      "cell": "07585 303160",
+      "id": {
+        "name": "NINO",
+        "value": "BC 41 15 37 B"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/43.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/43.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/43.jpg"
+      },
+      "nat": "GB"
+    }
+  ],
+  "info": {
+    "seed": "c374cfaa1382fdcd",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
