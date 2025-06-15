@@ -110,7 +110,7 @@ for p in data.people:
     print(p)
     # print(type(p))
     print(p.__class__.__name__)
-    print(f"{p.name=} {p.craft=}") # p.name='Li Guangsu' p.craft='Tiangong'
+    print(f"{p.name=} {p.craft=}")  # p.name='Li Guangsu' p.craft='Tiangong'
 # craft='ISS' name='Oleg Kononenko'
 # Astros
 # craft='ISS' name='Nikolai Chub'
@@ -135,3 +135,5 @@ for p in data.people:
 # Astros
 # craft='Tiangong' name='Ye Guangfu'
 # Astros
+
+# Przerwa 13:20
