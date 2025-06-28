@@ -32,3 +32,5 @@ async def multiple_httpx():
 
 # uruchomienie funkcji
 asyncio.run(multiple_httpx())
+# HTTPX total time: 0.2151 s.
+# dla 1 ->  HTTPX total time: 0.1211 s.
