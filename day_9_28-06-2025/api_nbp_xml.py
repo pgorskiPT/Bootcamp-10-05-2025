@@ -101,6 +101,8 @@ for rate in rates:
 
     currency_rates.append(Rate(currency=currency, code=code, mid=float(mid)))
 
+date = datetime.strptime(date, "%Y-%m-%d")
+
 exchange_rate_table = ExchangeRatesTable(
     table=table_name,
     data=date,
