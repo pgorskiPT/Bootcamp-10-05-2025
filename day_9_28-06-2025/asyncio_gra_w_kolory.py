@@ -2,6 +2,7 @@ import asyncio
 import random
 from colorama import Fore, Style, init
 
+#  echo -e "\033[91mCzerwony\033[0m" wypisz na konsoli tekst -e znaki specjalne
 init(autoreset=True)
 # c = (
 #     "\033[0m",
