@@ -1,8 +1,9 @@
+import os
 from concurrent.futures import ProcessPoolExecutor
 
 
 def worker(i):
-    print(f"Proces: {i}")
+    print(f"Proces: {i} w PID {os.getpid()}")
 
 
 print(__name__)  # __mp_main__
