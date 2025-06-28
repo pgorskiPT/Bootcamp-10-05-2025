@@ -45,4 +45,4 @@ imie1 = imie.firstChild.data
 print(imie1)  # Zygmunt
 atrybut = imie.getAttribute("foo")
 print(atrybut)  # zzz, wartość dla atrybutu "foo"
-
+# PRzerwa 11:30
