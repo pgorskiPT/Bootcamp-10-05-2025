@@ -20,3 +20,6 @@ if odp == str(data['number']):
     print("Prawidłowa odpowiedź")
 else:
     print("Błędna odpowiedź")
+
+insects = 10000000000000000000
+print(f"{insects:,}")  # 10,000,000,000,000,000,000
