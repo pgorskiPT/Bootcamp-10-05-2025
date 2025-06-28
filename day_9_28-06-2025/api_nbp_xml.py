@@ -1,5 +1,9 @@
+from datetime import datetime
+
 import requests
 import xml.etree.ElementTree as ET
+from pydantic import BaseModel
+from typing import List
 
 url = "https://api.nbp.pl/api/exchangerates/tables/A/?format=xml"
 
@@ -70,3 +74,47 @@ for rate in rates:
     # KRW : won południowokoreański - 0.002663
     # CNY : yuan renminbi (Chiny) - 0.5047
     # XDR : SDR (MFW) - 4.9948
+
+
+class Rate(BaseModel):
+    currency: str
+    code: str
+    mid: float
+
+
+class ExchangeRatesTable(BaseModel):
+    table: str
+    data: datetime
+    number: str
+    rates: List[Rate]
+
+
+# deserializacja za pomocą pydantic
+currency_rates = []
+
+for rate in rates:
+    # print(rate)
+    currency = rate.find("Currency").text
+    code = rate.find("Code").text
+    mid = rate.find("Mid").text
+    print(f"{code} : {currency} - {mid}")
+
+    currency_rates.append(Rate(currency=currency, code=code, mid=float(mid)))
+
+exchange_rate_table = ExchangeRatesTable(
+    table=table_name,
+    data=date,
+    number=no,
+    rates=currency_rates
+)
+
+print(exchange_rate_table)
+# table='A' data='2025-06-27' number='123/A/NBP/2025'
+# rates=[Rate(currency='bat (Tajlandia)', code='THB', mid=0.1109),
+# table='A' data=datetime.datetime(2025, 6, 27, 0, 0) number='123/A/NBP/2025'
+
+rates_pydantic = exchange_rate_table.rates
+for rate in rates_pydantic:
+    print(rate)
+# currency='SDR (MFW)' code='XDR' mid=4.9948
+# currency='dolar amerykański' code='USD' mid=3.6177
