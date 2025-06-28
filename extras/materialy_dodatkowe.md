@@ -155,3 +155,11 @@ pip install -r requirements.txt
 
 # api
 https://github.com/public-apis/public-apis
+
+# klient HTTP
+Biblioteka	Asynchroniczność	Wydajność (przy wielu zapytaniach)	Łatwość użycia	HTTP/2
+requests	Nie             	Średnia	                            Bardzo łatwa	Nie
+httpx	    Tak             	Wysoka	                            Łatwa	        Tak
+aiohttp	    Tak	                Wysoka	                            Średnia	        Tak
+urllib3	    Nie             	Wysok (w synchronicznym środowisku)	Łatwa	        Tak
+grequests	Nie                 (ale równoległe)  Wysoka	        Łatwa	        Nie
