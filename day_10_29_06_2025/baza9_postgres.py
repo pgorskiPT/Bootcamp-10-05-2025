@@ -3,8 +3,11 @@ import psycopg2
 
 # docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -p 5432:5432 -d postgres
 # localhost - 127.0.0.1
+
+# psql -U myuser -d mydatabase -h localhost -p 5432
 # \l - lista baz
 # \q - wyjscie
+# \dt - lista tabel
 conn = psycopg2.connect(
     host="localhost",
     port=5432,

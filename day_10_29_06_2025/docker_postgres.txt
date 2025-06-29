@@ -1,0 +1,21 @@
+# psql -U myuser -d mydatabase -h localhost -p 5432
+psql (17.5 (Debian 17.5-1.pgdg120+1))
+Type "help" for help.
+
+mydatabase=# \l
+                                                  List of databases
+    Name    | Owner  | Encoding | Locale Provider |  Collate   |   Ctype    | Locale | ICU Rules | Access privileges
+------------+--------+----------+-----------------+------------+------------+--------+-----------+-------------------
+ mydatabase | myuser | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           |
+ postgres   | myuser | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           |
+ template0  | myuser | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           | =c/myuser        +
+            |        |          |                 |            |            |        |           | myuser=CTc/myuser
+ template1  | myuser | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           | =c/myuser        +
+            |        |          |                 |            |            |        |           | myuser=CTc/myuser
+(4 rows)
+
+mydatabase=# \dt
+        List of relations
+ Schema | Name  | Type  | Owner
+--------+-------+-------+--------
+ public | users | table | myuser
