@@ -34,3 +34,4 @@ finally:
     if sql_connection:
         sql_connection.close()
         print("Baza danych została zamknięta")
+# Przerwa 13:40
