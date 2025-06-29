@@ -18,8 +18,15 @@ try:
     );
     '''
 
-    cursor.execute(query)
-    sql_connection.commit()
+    # cursor.execute(query)
+    # sql_connection.commit()
+
+    # wczytanie skryptu i wykonanie na bazie danych
+    with open("tables.sql", "r") as file:
+        sql_script = file.read()
+
+    cursor.executescript(sql_script)
+
 
 except sqlite3.Error as e:
     print("Bład bazy danych:", e)
