@@ -19,5 +19,8 @@ async def run():
     await conn.close()
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(run())
+# loop = asyncio.get_event_loop()
+# loop.run_until_complete(run())
+# nowoczesniejsze podejście
+if __name__ == '__main__':
+    asyncio.run(run())
