@@ -3,12 +3,20 @@ import asyncpg
 
 
 async def fetch_data():
+    # conn = await asyncpg.connect(
+    #     host="localhost",
+    #     port=5432,
+    #     database="mydatabase",
+    #     user="myuser",
+    #     password="mypassword"
+    # )
+
     conn = await asyncpg.connect(
-        host="localhost",
+        host="",
         port=5432,
-        database="mydatabase",
-        user="myuser",
-        password="mypassword"
+        database="",
+        user="",
+        password=""
     )
 
     try:

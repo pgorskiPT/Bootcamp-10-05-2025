@@ -4,12 +4,20 @@ import asyncpg
 
 
 async def run():
+    # conn = await asyncpg.connect(
+    #     host="localhost",
+    #     port=5432,
+    #     database="mydatabase",
+    #     user="myuser",
+    #     password="mypassword"
+    # )
+
     conn = await asyncpg.connect(
-        host="localhost",
+        host="",
         port=5432,
-        database="mydatabase",
-        user="myuser",
-        password="mypassword"
+        database="",
+        user="",
+        password=""
     )
 
     await conn.fetch("CREATE TABLE IF NOT EXISTS persons(id SERIAL PRIMARY KEY, name TEXT);")
