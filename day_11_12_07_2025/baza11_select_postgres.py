@@ -17,9 +17,10 @@ async def fetch_data():
             print(row)
 
         # pojedynczy wiersz
-        single_row = await conn.fetchrow("SELECT * FROM persons WHERE id=$1;", 1)
+        single_row = await conn.fetchrow("SELECT * FROM persons WHERE id=$1;", 1)  # <Record id=1 name='Radek'>
         if single_row:
-            print(f"Single Row -> ID: {single_row['id']}")
+            print(f"Single Row -> ID: {single_row['id']}, {single_row}")
+            # Single Row -> ID: 1, <Record id=1 name='Radek'>
     finally:
         await conn.close()
 
@@ -28,4 +29,4 @@ asyncio.run(fetch_data())
 # <Record id=1 name='Radek'>
 # <Record id=2 name='Radek'>
 # <Record id=3 name='Radek'>
-# Single Row -> ID: 1
+# Single Row -> ID: 1, <Record id=1 name='Radek'>
