@@ -68,3 +68,4 @@ for child in children:
 # 2025-07-12 12:46:21,339 INFO sqlalchemy.engine.Engine SELECT children.id AS children_id, children.name AS children_name, children.parent_id AS children_parent_id
 # FROM children
 # WHERE ? = children.parent_id
+# przerwa 13:30
