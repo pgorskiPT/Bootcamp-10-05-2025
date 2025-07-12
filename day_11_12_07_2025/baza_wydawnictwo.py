@@ -56,14 +56,41 @@ new_author = Author(name="Jan Kowalski")
 new_publisher = Publisher(name="Wydawnictwo i Spółka")
 new_book = Book(title="Python średniozaawansowany", author=new_author, publisher=new_publisher)
 
-session.add_all(
-    [new_author, new_publisher, new_book]
-)
-
-session.commit()
+# session.add_all(
+#     [new_author, new_publisher, new_book]
+# )
+#
+# session.commit()
 
 # dodac jescze jednego autora, książkę, wydawnictwo
 # odczytac z bazy autorów
-# wypisać ksiazki autoró∑
+# wypisać ksiazki autorów
 # wypisac autor, ksiązka wydawnictwo
 session.close()
+
+authors = session.query(Author).all()
+print(authors)
+for author in authors:
+    print(f"Author: {author.name}")
+    for book in author.books:
+        print(f"Ksiązka: {book.title}, Wydawca: {book.publisher.name}")
+# Author: Adam Mickieicz
+# Ksiązka: Pan Tadeusz, Wydawca: Wydawnictwo XYZ
+# Author: Jan Kowalski
+# Ksiązka: Python średniozaawansowany, Wydawca: Wydawnictwo i Spółka
+# Author: Jan Kowalski
+# Ksiązka: Python średniozaawansowany, Wydawca: Wydawnictwo i Spółka
+# Author: Jan Kowalski
+# Ksiązka: Python średniozaawansowany, Wydawca: Wydawnictwo i Spółka
+
+publishers = session.query(Publisher).all()
+
+for publisher in publishers:
+    print(f"Wydawca: {publisher.name}")
+    for book in publisher.books:
+        print(f"Ksiązka: {book.title}")
+# Ksiązka: Python średniozaawansowany
+# Wydawca: Wydawnictwo i Spółka
+# Ksiązka: Python średniozaawansowany
+# Wydawca: Wydawnictwo i Spółka
+# Ksiązka: Python średniozaawansowany
