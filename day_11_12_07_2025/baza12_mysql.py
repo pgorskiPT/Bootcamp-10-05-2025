@@ -34,3 +34,4 @@ finally:
 # Połączono z serwers MySql w wersji: 8.0.33-25
 # Połaczenie z bazą danych: ('37970432_dane_mysql',)
 # Połączenie z MySQL zostało zamknięte
+# przerwa 11:25
