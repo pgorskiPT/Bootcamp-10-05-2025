@@ -52,9 +52,9 @@ session = Session()
 #     [new_author, new_publisher, new_book]
 # )
 
-new_author = Author(name="Adam Mickieicz")
-new_publisher = Publisher(name="Wydawnictwo XYZ")
-new_book = Book(title="Pan Tadeusz", author=new_author, publisher=new_publisher)
+new_author = Author(name="Jan Kowalski")
+new_publisher = Publisher(name="Wydawnictwo i Spółka")
+new_book = Book(title="Python średniozaawansowany", author=new_author, publisher=new_publisher)
 
 session.add_all(
     [new_author, new_publisher, new_book]
