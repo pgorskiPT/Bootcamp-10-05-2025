@@ -150,16 +150,18 @@ https://www.unicode.org/Public/12.1.0/ucd/CaseFolding.txt
 ![img_5.png](img_5.png)
 
 # pip freeze
-pip freeze > requirements.txt
+pip freeze > requirements.txt \
 pip install -r requirements.txt
 
 # api
 https://github.com/public-apis/public-apis
 
 # klient HTTP
-Biblioteka	Asynchroniczność	Wydajność (przy wielu zapytaniach)	Łatwość użycia	HTTP/2
-requests	Nie             	Średnia	                            Bardzo łatwa	Nie
-httpx	    Tak             	Wysoka	                            Łatwa	        Tak
-aiohttp	    Tak	                Wysoka	                            Średnia	        Tak
-urllib3	    Nie             	Wysok (w synchronicznym środowisku)	Łatwa	        Tak
-grequests	Nie                 (ale równoległe)  Wysoka	        Łatwa	        Nie
+| Biblioteka | Asynchroniczność       | Wydajność (przy wielu zapytaniach)     | Łatwość użycia | HTTP/2 |
+|------------|------------------------|----------------------------------------|----------------|--------|
+| requests   | Nie                    | Średnia                                | Bardzo łatwa   | Nie    |
+| httpx      | Tak                    | Wysoka                                 | Łatwa          | Tak    |
+| aiohttp    | Tak                    | Wysoka                                 | Średnia        | Tak    |
+| urllib3    | Nie                    | Wysoka (w synchronicznym środowisku)   | Łatwa          | Tak    |
+| grequests  | Nie (ale równoległe)   | Wysoka                                 | Łatwa          | Nie    |
+
