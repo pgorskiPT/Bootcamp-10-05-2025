@@ -69,6 +69,12 @@ def main():
         print("\n== After email update ==")
         print(get_users(session))
 
+        # delete
+        delete_user(session, 2)
+        session.commit()
+        print("\n== After delete ==")
+        print(get_users(session))
+
 
 if __name__ == '__main__':
     main()
@@ -77,3 +83,5 @@ if __name__ == '__main__':
 #
 # == After email update ==
 # [User(id=1, name='Margaret Hamilton', email='margaret@apollo.guide', User(id=2, name='Linus Tornvalds', email='linus@kernel.org']
+# == After delete ==
+# [User(id=1, name='Margaret Hamilton', email='margaret@apollo.guide']
