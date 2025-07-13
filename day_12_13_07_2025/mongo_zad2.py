@@ -30,3 +30,4 @@ client.close()
 # {'_id': ObjectId('68739011d7bcb04a45ff7b97'), 'imie': 'Jan', 'nazwisko': 'Kowalski', 'wiek': 30}
 # {'_id': ObjectId('687391303f7284532cdd7170'), 'imie': 'Anna', 'nazwisko': 'Nowak', 'wiek': 27}
 # {'_id': ObjectId('687391303f7284532cdd7171'), 'imie': 'Paweł', 'nazwisko': 'Wiśniewski', 'wiek': 19, 'czas': '13/07/2025'}
+# Przerwa 13:40
