@@ -85,3 +85,4 @@ if __name__ == '__main__':
 # [User(id=1, name='Margaret Hamilton', email='margaret@apollo.guide', User(id=2, name='Linus Tornvalds', email='linus@kernel.org']
 # == After delete ==
 # [User(id=1, name='Margaret Hamilton', email='margaret@apollo.guide']
+# Przerwa 11:40
