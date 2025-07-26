@@ -54,5 +54,5 @@ class MyGui:
         if self.cb_var.get() == 1:
             tk.messagebox.showinfo("Wybór", "Zaznaczyęś kwadracik")
 
-
 gui = MyGui()
+# przerwa 13:45
