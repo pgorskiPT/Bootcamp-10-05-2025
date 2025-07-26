@@ -9,6 +9,11 @@ def on_return_key(event):
     print("Return key pressed!!!")
     text = entry.get()
     print(f"Entered: {text}")
+    clear_entry()
+
+
+def clear_entry():
+    entry.delete(0, tk.END)
 
 
 root = tk.Tk()
