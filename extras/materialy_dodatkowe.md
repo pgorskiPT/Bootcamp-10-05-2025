@@ -191,4 +191,5 @@ czy wystarczy prostsze rozwiązanie.
  pyinstaller --onefile --noconsole okno_1.py \
  pyinstaller --onefile --windowed okno_1.py
  
-https://nuitka.net/ 
+https://nuitka.net/ \
+nuitka --standalone --onefile --macos-create-app-bundle --follow-imports --include-package=pygame zegar_pygame.py
