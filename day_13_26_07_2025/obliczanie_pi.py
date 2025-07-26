@@ -9,17 +9,28 @@ import numpy as np
 total_points_inside_circle = 0
 
 
-def monte_carlo_pi(n):
-    points_inside_circle = 0
+# def monte_carlo_pi(n):
+#     points_inside_circle = 0
+#
+#     for _ in range(n):
+#         x = random.uniform(-1, 1)
+#         y = random.uniform(-1, 1)
+#
+#         if x ** 2 + y ** 2 <= 1:
+#             points_inside_circle += 1
+#
+#     return 4 * (points_inside_circle / n)
 
-    for _ in range(n):
-        x = random.uniform(-1, 1)
-        y = random.uniform(-1, 1)
+# z wykorzystaniem numpy
+def monte_carlo_pi(num_sample):
+    x = np.random.uniform(-1, 1, num_sample).astype(np.float32)
+    y = np.random.uniform(-1, 1, num_sample).astype(np.float32)
 
-        if x ** 2 + y ** 2 <= 1:
-            points_inside_circle += 1
+    inside_circle = x ** 2 + y ** 2 <= 1
+    num_inside_circle = np.sum(inside_circle)
+    pi_estimate = 4 * num_inside_circle / num_sample
 
-    return 4 * (points_inside_circle / n)
+    return pi_estimate
 
 
 def no_threads(iterations):
@@ -94,3 +105,8 @@ if __name__ == '__main__':
 # Z wątkami: 3.1415748000000003, czas 13.144520044326782
 # Z procesami: 3.14130368, czas 3.0923409461975098
 # Z ThreadPoolExecutor: 3.14145656, czas: 13.134495973587036
+# z numpy
+# Bez wątków: 3.14128992, czas: 0.7234160900115967
+# Z wątkami: 3.14194648, czas 0.4711921215057373
+# Z procesami: 3.1415516799999996, czas 0.5735378265380859
+# Z ThreadPoolExecutor: 3.1415332000000005, czas: 0.4754297733306885
