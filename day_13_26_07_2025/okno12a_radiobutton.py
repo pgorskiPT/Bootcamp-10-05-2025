@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.messagebox
-import tkinter.font
+import tkinter.font as tkfont
 
 
 class MyGui:
@@ -18,10 +18,16 @@ class MyGui:
         self.cb_var = tk.IntVar()
         self.cb_var.set(0)
 
+        my_font = tkfont.Font(family="Helvetica", size=18, weight="bold")
+
+        self.label1 = tk.Label(self.top_frame, text="Start", font=my_font)
+
         self.rb1 = tk.Radiobutton(self.top_frame, text="Opcja 1", variable=self.radio_var, value=1)
         self.rb2 = tk.Radiobutton(self.top_frame, text="Opcja 2", variable=self.radio_var, value=2)
         self.rb3 = tk.Radiobutton(self.top_frame, text="Opcja 3", variable=self.radio_var, value=3)
         self.rb4 = tk.Checkbutton(self.top_frame, text="Opcja 4", variable=self.cb_var)
+
+        self.label1.pack()
 
         self.rb1.pack()
         self.rb2.pack()
@@ -41,5 +47,6 @@ class MyGui:
         tk.messagebox.showinfo("Wybór", "Wybrałeś opcję: " + str(self.radio_var.get()))
         if self.cb_var.get() == 1:
             tk.messagebox.showinfo("Wybór", "Zaznaczyęś kwadracik")
+
 
 gui = MyGui()
