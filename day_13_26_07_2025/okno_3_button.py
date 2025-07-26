@@ -14,3 +14,4 @@ button = tk.Button(app, text="Kliknij mnie", command=on_click)  # podajemy refer
 button.pack()
 
 app.mainloop()
+# przerwa 11:15
