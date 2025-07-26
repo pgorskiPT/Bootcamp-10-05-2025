@@ -190,3 +190,5 @@ czy wystarczy prostsze rozwiązanie.
  pip install pyinstaller \
  pyinstaller --onefile --noconsole okno_1.py \
  pyinstaller --onefile --windowed okno_1.py
+ 
+https://nuitka.net/ 
