@@ -185,3 +185,8 @@ Stosowanie SOLID to drogowskaz, \
 nie twardy przepis – warto wyważyć, \
 czy w małym skrypcie opłaca się wprowadzać wszystkie abstrakcje, \
 czy wystarczy prostsze rozwiązanie. 
+
+# pliki exe
+ pip install pyinstaller \
+ pyinstaller --onefile --noconsole okno_1.py \
+ pyinstaller --onefile --windowed okno_1.py
