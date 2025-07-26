@@ -93,7 +93,8 @@ def with_thread_pool_executor(iterations):
 
 
 # iterations = 10_000_000
-iterations = 50_000_000
+# iterations = 50_000_000
+iterations = 500_000_000
 if __name__ == '__main__':
     no_threads(iterations)
     with_threads(iterations)
