@@ -24,4 +24,49 @@ class CustomEntry(ttk.Frame):
         self.calendar_win = None
 
     def show_calendar(self):
-        pass
+        if self.calendar_win:
+            return
+
+        self.calendar_win = tk.Toplevel(self)
+        self.calendar_win.transient(self)
+        self.calendar_win.grab_set()
+
+        x = self.entry.winfo_rootx()
+        y = self.entry.winfo_rooty() + self.entry.winfo_height()
+        self.calendar_win.geometry(f'+{x}+{y}')
+
+        cal = Calendar(self.calendar_win,
+                       date_pattern='yyyy-mm-dd',
+                       background='#f8f8f8',
+                       foreground='#333333',
+                       selectbackground='#1976d2',
+                       selectforeground='#ffffff')
+
+        cal.pack()
+
+        def select_date():
+            selected = cal.get_date()
+            self.var.set(selected)
+            self.calendar_win.destroy()
+            self.calendar_win = None
+
+        cal.bind("<<CalendarSelected>>", lambda e: select_date())
+
+        self.calendar_win.protocol("WM_DELETE_WINDOW",
+                                   lambda: self.calendar_win.destroy())
+        self.calendar_win.focus_force()
+
+    def get_date(self):
+        return self.var.get()
+
+
+root = tk.Tk()
+root.title("Wybór daty")
+
+date_entry = CustomEntry(root)
+date_entry.pack(padx=10, pady=10)
+
+result_label = ttk.Label(root, text="Wybrana data: brak")
+result_label.pack(pady=5)
+
+root.mainloop()
