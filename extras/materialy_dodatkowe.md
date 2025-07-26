@@ -165,3 +165,23 @@ https://github.com/public-apis/public-apis
 | urllib3    | Nie                    | Wysoka (w synchronicznym środowisku)   | Łatwa          | Tak    |
 | grequests  | Nie (ale równoległe)   | Wysoka                                 | Łatwa          | Nie    |
 
+# SOLID
+
+SOLID to akronim pięciu zasad projektowania obiektowego, \
+które pomagają tworzyć kod bardziej czytelny, elastyczny i łatwy w utrzymaniu.
+
+S — Single Responsibility Principle (SRP) \
+O — Open/Closed Principle (OCP) \
+L — Liskov Substitution Principle (LSP)\
+I — Interface Segregation Principle (ISP)\
+D — Dependency Inversion Principle (DIP) \
+Korzyści stosowania SOLID \
+	•	Łatwiejsze testowanie (wstrzykiwanie mocków). \
+	•	Kod bardziej odporny na zmiany. \
+	•	Lepsza czytelność i separacja odpowiedzialności. \
+	•	Ułatwiona rozbudowa i konserwacja. 
+
+Stosowanie SOLID to drogowskaz, \
+nie twardy przepis – warto wyważyć, \
+czy w małym skrypcie opłaca się wprowadzać wszystkie abstrakcje, \
+czy wystarczy prostsze rozwiązanie. 
