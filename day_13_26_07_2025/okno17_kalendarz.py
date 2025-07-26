@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+
+from dateutil.rrule import weekday
 from tkcalendar import Calendar
 from datetime import datetime
 
@@ -68,5 +70,20 @@ date_entry.pack(padx=10, pady=10)
 
 result_label = ttk.Label(root, text="Wybrana data: brak")
 result_label.pack(pady=5)
+
+
+def show_result():
+    date_str = date_entry.get_date()
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        weekday = dt.strftime("%A")  # nazwa dnia tygodnia
+        formatted = f"Wybrana data: {date_str} - {weekday}"
+    except ValueError:
+        formatted = "Niepoprawna data!"
+    result_label.config(text=formatted)
+
+
+action_btn = ttk.Button(root, text="Pokaż w Labelce", command=show_result)
+action_btn.pack(pady=5)
 
 root.mainloop()
