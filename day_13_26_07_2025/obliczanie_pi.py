@@ -111,3 +111,8 @@ if __name__ == '__main__':
 # Z wątkami: 3.14194648, czas 0.4711921215057373
 # Z procesami: 3.1415516799999996, czas 0.5735378265380859
 # Z ThreadPoolExecutor: 3.1415332000000005, czas: 0.4754297733306885
+# (.venv) radoslawjaniak@mac day_13_26_07_2025 % python obliczanie_pi.py
+# Bez wątków: 3.14167192, czas: 11.579645156860352
+# Z wątkami: 3.141534632, czas 4.69573712348938
+# Z procesami: 3.141578312, czas 1.9770359992980957
+# Z ThreadPoolExecutor: 3.141537544, czas: 4.838892221450806
