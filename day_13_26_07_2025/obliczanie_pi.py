@@ -68,12 +68,29 @@ def with_processes(iterations):
         print(f"Z procesami: {pi}, czas {end - start}")
 
 
+def with_thread_pool_executor(iterations):
+    num_threads = 8
+    iterations_per_thread = iterations // num_threads
+
+    start = time.time()
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+        result = list(executor.map(monte_carlo_pi, [iterations_per_thread] * num_threads))
+        pi = sum(result) / num_threads
+
+    end = time.time()
+    print(f"Z ThreadPoolExecutor: {pi}, czas: {end - start}")
+
+
 # iterations = 10_000_000
 iterations = 50_000_000
 if __name__ == '__main__':
     no_threads(iterations)
     with_threads(iterations)
     with_processes(iterations)
-
+    with_thread_pool_executor(iterations)
 # Bez wątków: 3.14202, czas: 2.81632399559021
 # Bez wątków: 3.1417344, czas: 13.558860063552856 przy 50_000_000
+# Bez wątków: 3.14113496, czas: 13.856833696365356
+# Z wątkami: 3.1415748000000003, czas 13.144520044326782
+# Z procesami: 3.14130368, czas 3.0923409461975098
+# Z ThreadPoolExecutor: 3.14145656, czas: 13.134495973587036
