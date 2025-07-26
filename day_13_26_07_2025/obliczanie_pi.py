@@ -55,11 +55,25 @@ def with_threads(iterations):
     print(f"Z wątkami: {pi}, czas {end - start}")
 
 
+def with_processes(iterations):
+    num_processes = 8
+    iterations_per_process = iterations // num_processes
+
+    start = time.time()
+    with multiprocessing.Pool(num_processes) as pool:
+        result = pool.map(monte_carlo_pi, [iterations_per_process] * num_processes)
+
+        pi = sum(result) / num_processes
+        end = time.time()
+        print(f"Z procesami: {pi}, czas {end - start}")
+
+
 # iterations = 10_000_000
 iterations = 50_000_000
 if __name__ == '__main__':
     no_threads(iterations)
     with_threads(iterations)
+    with_processes(iterations)
 
 # Bez wątków: 3.14202, czas: 2.81632399559021
 # Bez wątków: 3.1417344, czas: 13.558860063552856 przy 50_000_000
