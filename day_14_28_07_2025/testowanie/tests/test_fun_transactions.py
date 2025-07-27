@@ -1,4 +1,4 @@
-import fun_transactions as ft
+from day_14_28_07_2025.testowanie import fun_transactions as ft
 
 
 def test_filter_transactions_income():
