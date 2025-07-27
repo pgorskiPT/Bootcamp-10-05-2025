@@ -197,3 +197,8 @@ nuitka --standalone --onefile --macos-create-app-bundle --follow-imports --inclu
 # figma
 
 https://www.youtube.com/watch?v=bD3rx1tCRGQ
+
+# pyqt - pygui
+
+https://www.pythonguis.com/ 
+https://www.pythonguis.com/pyside6-tutorial/
