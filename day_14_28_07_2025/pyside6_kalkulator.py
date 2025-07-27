@@ -45,5 +45,20 @@ class Calculator(QWidget):
 
     def create_button(self, text, row, column):
         button = QPushButton(text)
-        button.clicked.connect(lambda : self.button_click(text))
+        button.clicked.connect(lambda: self.button_click(text))
         self.grid.addWidget(button, row, column)
+
+    def button_click(self, text):
+        if text == "=":
+            self.calculate()
+        elif text == "C":
+            self.result_fields.setText("")
+        else:
+            self.result_fields.setText(self.result_fields.text() + text)
+
+    def calculate(self):
+        try:
+            result = eval(self.result_fields.text())  # wykona działanie
+            self.result_fields.setText(str(result))
+        except:
+            self.result_fields.setText("Error!!!")
