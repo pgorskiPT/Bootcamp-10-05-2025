@@ -14,6 +14,7 @@ print(tekst)  # Witaj Świecie
 tekst_upper = tekst.upper()
 print(tekst_upper)  # WITAJ ŚWIECIE
 
+assert tekst_upper == "WITAJ ŚWIECIE" # dodanie asercji w kodzie, takie testowanie zamiast if lub wizualnie
 # lower()
 print(tekst.lower())  # witaj świecie
 
