@@ -202,3 +202,18 @@ https://www.youtube.com/watch?v=bD3rx1tCRGQ
 
 https://www.pythonguis.com/ 
 https://www.pythonguis.com/pyside6-tutorial/
+
+# testowanie
+
+| Cecha                    | unittest                                                                 | pytest                                                                                       |
+|--------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| **Pochodzenie**          | Wbudowany w Pythona<br>(inspirowany JUnit z Javy)                        | Zewnętrzny pakiet<br>skoncentrowany na prostocie i czytelności                                 |
+| **Sposób pisania testów**| Klasy dziedziczące `unittest.TestCase`<br>Metody zaczynają się od `test_`| Funkcje (lub metody w klasach)<br>Wystarczy nazwać je `test_…`                                 |
+| **Assercje**             | `self.assertEqual(a, b)`<br>`self.assertTrue(x)` itd.                   | Zwykłe `assert a == b`<br>pytest wyświetli szczegółowe wartości po obu stronach               |
+| **Parametryzacja**       | Trudniejsza – wymaga `subTest()`<br>lub pętli w kodzie testu             | Dekorator `@pytest.mark.parametrize`<br>łatwe generowanie wielu wariantów                     |
+| **Fixtures**             | `setUp()`, `tearDown()`,<br>`setUpClass()`, `tearDownClass()`           | `@pytest.fixture` z różnymi scope<br>i wstrzykiwaniem przez nazwę argumentu                   |
+| **Odkrywanie testów**    | `python -m unittest discover`                                            | Automatyczne wyszukiwanie plików `test_*.py` i funkcji/metod `test_…`                         |
+| **Raporty i opcje**      | Standardowe raporty<br>mniej opcji CLI                                    | Bogate opcje CLI i wtyczki (HTML-report, Coverage, xdist do równoległego uruchamiania itd.)   |
+| **Ekosystem**            | Niewielki                                                               | Ogromny: pytest-cov, pytest-mock, pytest-xdist, pytest-django itd.                             |
+| **Krzywa uczenia**       | Wyższa – „ceremonialny” (klasy, metody)                                  | Niska – piszesz po prostu funkcje i `assert`                                                  |
+
