@@ -1,0 +1,44 @@
+import sys
+from PySide6.QtGui import QIcon, QPixmap
+from PySide6.QtWidgets import QApplication, QWidget, QGridLayout, QLineEdit, QPushButton
+
+
+class Calculator(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Calculator")
+
+        # self.setWindowIcon(QIcon(QPixmap("calculator.png")))
+
+        self.grid = QGridLayout()
+        self.setLayout(self.grid)
+
+        self.result_fields = QLineEdit()
+        self.grid.addWidget(self.result_fields, 0, 0, 1, 4)
+
+        self.create_button("7", 1, 0)
+        self.create_button("8", 1, 1)
+        self.create_button("9", 1, 2)
+        self.create_button("/", 1, 3)
+
+        self.create_button("4", 2, 0)
+        self.create_button("5", 2, 1)
+        self.create_button("6", 2, 2)
+        self.create_button("*", 2, 3)
+
+        self.create_button("1", 3, 0)
+        self.create_button("2", 3, 1)
+        self.create_button("3", 3, 2)
+        self.create_button("-", 3, 3)
+
+        self.create_button("0", 4, 0)
+        self.create_button(".", 4, 1)
+        self.create_button("=", 4, 2)
+        self.create_button("+", 4, 3)
+
+        self.create_button("C", 5, 0)
+
+        self.result_fields.setFocus()
+        self.setLayout(self.grid)
