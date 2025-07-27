@@ -70,3 +70,5 @@ if __name__ == '__main__':
     calculator = Calculator()
     calculator.show()
     sys.exit(app.exec())
+
+# przerwa 11:20
