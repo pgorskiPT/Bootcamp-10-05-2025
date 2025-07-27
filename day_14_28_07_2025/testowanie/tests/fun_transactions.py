@@ -19,7 +19,7 @@ def filter_transactions(transactions, transaction_type):
 
 
 def map_transactions(transactions, currency):
-    return list(map(lambda x: ['amount'] if x['currency'] == currency else 0, transactions))
+    return list(map(lambda x: x['amount'] if x['currency'] == currency else 0, transactions))
 
 
 def reduce_transactions(transactions):
@@ -28,7 +28,10 @@ def reduce_transactions(transactions):
 
 def process_transactions(transactions, transaction_type, currency):
     filtered = filter_transactions(transactions, transaction_type)
-    mapped = map_transactions(filtered, transaction_type)
+    mapped = map_transactions(filtered, currency)
     total = reduce_transactions(mapped)
 
     return total
+
+if __name__ == '__main__':
+    print(process_transactions(transactions, "expense", "EUR")) # 400
