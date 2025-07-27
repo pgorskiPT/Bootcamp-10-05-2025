@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+#  git restore --staged ../.env
 
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
