@@ -27,3 +27,4 @@ def test_square_calculate_parametrized(input, expected_output):
 # pytest_zad2.py::test_square_calculate_parametrized[4-16] PASSED          [100%]
 #
 # ============================== 4 passed in 0.01s ===============================
+# Przerwa 13:30
