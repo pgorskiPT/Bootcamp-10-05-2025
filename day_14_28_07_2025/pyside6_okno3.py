@@ -4,9 +4,11 @@ from PySide6.QtWidgets import (
     QLineEdit, QLabel, QPushButton, QStyleFactory
 )
 
+
 # funkcja uruchamiana po nacisnieciu buttona
 def show_text():
     label.setText(textbox.text())
+
 
 app = QApplication(sys.argv)
 
