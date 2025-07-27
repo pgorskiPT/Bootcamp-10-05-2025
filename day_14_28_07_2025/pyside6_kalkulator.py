@@ -62,3 +62,11 @@ class Calculator(QWidget):
             self.result_fields.setText(str(result))
         except:
             self.result_fields.setText("Error!!!")
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    calculator = Calculator()
+    calculator.show()
+    sys.exit(app.exec())
