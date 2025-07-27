@@ -42,3 +42,8 @@ class Calculator(QWidget):
 
         self.result_fields.setFocus()
         self.setLayout(self.grid)
+
+    def create_button(self, text, row, column):
+        button = QPushButton(text)
+        button.clicked.connect(lambda : self.button_click(text))
+        self.grid.addWidget(button, row, column)
