@@ -193,3 +193,7 @@ czy wystarczy prostsze rozwiązanie.
  
 https://nuitka.net/ \
 nuitka --standalone --onefile --macos-create-app-bundle --follow-imports --include-package=pygame zegar_pygame.py
+
+# figma
+
+https://www.youtube.com/watch?v=bD3rx1tCRGQ
