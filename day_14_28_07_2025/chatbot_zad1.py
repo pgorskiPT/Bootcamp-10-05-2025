@@ -6,9 +6,9 @@ from openai import OpenAI
 # pip install openai
 
 class ChatBot:
-    # def __init__(self, model="gpt-3.5-turbo"):
+    def __init__(self, model="gpt-3.5-turbo"):
     # def __init__(self, model="gpt-4-0613"):
-    def __init__(self, model="gpt-4.1"):
+    # def __init__(self, model="gpt-4.1"):
         api_key = os.getenv("OPENAI_API_KEY")
         self.client = OpenAI(api_key=api_key)
         self.message = []
