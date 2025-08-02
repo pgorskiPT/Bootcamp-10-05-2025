@@ -217,3 +217,7 @@ https://www.pythonguis.com/pyside6-tutorial/
 | **Ekosystem**            | Niewielki                                                               | Ogromny: pytest-cov, pytest-mock, pytest-xdist, pytest-django itd.                             |
 | **Krzywa uczenia**       | Wyższa – „ceremonialny” (klasy, metody)                                  | Niska – piszesz po prostu funkcje i `assert`                                                  |
 
+
+# cześć webowa
+https://github.com/rajkonkret/Bootcamp-10-05-2025-web
+
