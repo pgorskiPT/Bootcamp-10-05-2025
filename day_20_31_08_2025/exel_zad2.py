@@ -9,7 +9,8 @@ import datetime as dt
 # book = xlsxwriter.Workbook("xlsxwriter2.xlsx")
 # book = xlsxwriter.Workbook("xlsxwriter3.xlsx")
 # book = xlsxwriter.Workbook("xlsxwriter4.xlsx")
-book = xlsxwriter.Workbook("xlsxwriter5.xlsx")
+# book = xlsxwriter.Workbook("xlsxwriter5.xlsx")
+book = xlsxwriter.Workbook("xlsxwriter6.xlsx")
 
 # tworzymy arkusz
 sheet = book.add_worksheet("Arkusz1")
@@ -40,6 +41,9 @@ sheet.write("A5", 3.3333333, number_format)
 
 # formuły
 sheet.write("A6", "=SUM(A4, 2)")
+
+# dodanie obrazka
+sheet.insert_image(0, 2, "djngo_komendy.png")
 
 
 book.close()
