@@ -43,21 +43,21 @@ sheet.write("A5", 3.3333333, number_format)
 sheet.write("A6", "=SUM(A4, 2)")
 
 # dodanie obrazka
-sheet.insert_image(0, 2, "djngo_komendy.png")
+sheet.insert_image(0, 5, "djngo_komendy.png", {"x_scale": 0.5, "y_scale": 0.5})
 
 # wykresy
 categories = ["Styczeń", "Luty"]
 values = [100, 150]
-sheet.write_row("B10", categories)
-sheet.write_row("B11", values)
+sheet.write_row("B20", categories)
+sheet.write_row("B21", values)
 
 chart = book.add_chart({"type": "column"})
 chart.set_title({"name": "Sprzedaż"})
 chart.add_series(
     {
-        "name": "=Arkusz1!A11",
-        "categories": "=Arkusz1!B10:C10",
-        "values": "=Arkusz1!B11:C11"
+        "name": "=Arkusz1!A30",
+        "categories": "=Arkusz1!B20:C20",
+        "values": "=Arkusz1!B21:C21"
     }
 )
 
@@ -65,6 +65,5 @@ chart.set_x_axis({"name": "Os X"})
 chart.set_y_axis({"name": "Os Y"})
 
 sheet.insert_chart("A15", chart)
-
 
 book.close()
