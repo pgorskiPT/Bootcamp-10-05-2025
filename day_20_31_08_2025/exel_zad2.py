@@ -30,4 +30,8 @@ sheet.write("A3", "Witaj 3", formatting)
 date_format = book.add_format({"num_format": "yyyy/mm/dd"})
 sheet.write("A4", dt.date(2016, 10, 13), date_format)
 
+# fromatowanie wartości numerycznych
+number_format = book.add_format({"num_format": "0.00"})
+sheet.write("A4", 3.3333333, number_format)
+
 book.close()
