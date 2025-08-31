@@ -1,7 +1,5 @@
 import pyexcel
 
-from day_20_31_08_2025.exel_zad2 import sheet
-
 # # pip install pyexcel pyexcel-xlsx
 
 data = [
