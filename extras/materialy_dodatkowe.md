@@ -1,4 +1,4 @@
-
+część webowa dostępna tutaj: https://github.com/rajkonkret/Bootcamp-10-05-2025-web
 -----------------------
 # rajkonkret660@gmail.com
 
