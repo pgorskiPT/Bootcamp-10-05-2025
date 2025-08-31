@@ -6,7 +6,8 @@ import datetime as dt
 
 # tworzymy plik
 # book = xlsxwriter.Workbook("xlsxwriter.xlsx")
-book = xlsxwriter.Workbook("xlsxwriter2.xlsx")
+# book = xlsxwriter.Workbook("xlsxwriter2.xlsx")
+book = xlsxwriter.Workbook("xlsxwriter3.xlsx")
 
 # tworzymy arkusz
 sheet = book.add_worksheet("Arkusz1")
@@ -25,5 +26,8 @@ formatting = book.add_format(
 )
 sheet.write("A3", "Witaj 3", formatting)
 
+# formatowanie daty
+date_format = book.add_format({"num_format": "yyyy/mm/dd"})
+sheet.write("A4", dt.date(2016, 10, 13), date_format)
 
 book.close()
