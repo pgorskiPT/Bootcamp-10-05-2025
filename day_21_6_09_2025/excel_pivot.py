@@ -19,4 +19,5 @@ for row in data:
 
 pivot_ws = wb.create_sheet("Tabele Przestawna")
 
+
 wb.save("tabela_przestawna.xlsx")
