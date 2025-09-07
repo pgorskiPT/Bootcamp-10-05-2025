@@ -60,3 +60,29 @@ print("Większe od 0.5", filtered_arr)
 #  0.53911956 0.57718572 0.91304649 0.72726845 0.68640667 0.66156896
 #  0.79801535 0.70115897 0.5284332 ]
 print(filtered_arr.shape)  # (11,)
+
+fruits = np.array(['jabłko', "banan", "wiśnie", 'gruszka', 'kiwi'])
+
+filterd_fruits = fruits[np.char.find(fruits, 'a') >= 0]
+print("Owoce zawierające literę a:", filterd_fruits)
+# Owoce zawierające literę a: ['jabłko' 'banan' 'gruszka']
+
+arr = np.arange(20)
+
+filtered_arr = arr[np.arange(len(arr)) % 2 == 0]  # wygenerowaliśmy tablicę indeksów
+print("Wartości na parzystych indeksach:", filtered_arr)
+# Wartości na parzystych indeksach: [ 0  2  4  6  8 10 12 14 16 18]
+mask = np.arange(len(arr)) % 2 == 0
+print('Maska filtrowania:', mask)
+# Maska filtrowania: [ True False  True False  True False  True False  True False  True False
+#   True False  True False  True False  True False]
+
+arr = np.array([1, 2, np.nan, 4, np.inf, 6, -np.inf, 8])
+# np.inf - wartość nieskończona
+print(arr)  # [  1.   2.  nan   4.  inf   6. -inf   8.]
+filtered_arr_inf = arr[np.isinf(arr)]
+print(filtered_arr_inf)  # [ inf -inf]
+filtered_arr_nan = arr[np.isnan(arr)]
+print(filtered_arr_nan)  # [nan]
+filtered_arr = arr[np.isfinite(arr)]  # bez nan i bez inf
+print(filtered_arr)  # [1. 2. 4. 6. 8.]
