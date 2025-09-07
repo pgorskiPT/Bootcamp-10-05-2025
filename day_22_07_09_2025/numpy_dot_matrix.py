@@ -35,27 +35,35 @@ def initialize_array_2D(shape: Tuple[int, int]) -> PythonArray2D:
         for _ in range(shape[0])
     ]
 
+if __name__ == '__main__':
 
-# macierze pythonowe
-PYTHON_ARRAY_A = generate_random_array2D(shape=(500, 500))
-PYTHON_ARRAY_B = generate_random_array2D(shape=(500, 500))
+    # macierze pythonowe
+    PYTHON_ARRAY_A = generate_random_array2D(shape=(500, 500))
+    PYTHON_ARRAY_B = generate_random_array2D(shape=(500, 500))
 
-# macierze numpy
-NUMPY_ARRAY_A = np.array(PYTHON_ARRAY_A)
-NUMPY_ARRAY_B = np.array(PYTHON_ARRAY_B)
+    # macierze numpy
+    NUMPY_ARRAY_A = np.array(PYTHON_ARRAY_A)
+    NUMPY_ARRAY_B = np.array(PYTHON_ARRAY_B)
 
-start_time = time.time()
-python_operation_result = multiply_python_arrays(x=PYTHON_ARRAY_A, y=PYTHON_ARRAY_B)
-python_exec_time = time.time() - start_time
-print(f"Time: {python_exec_time}")
+    start_time = time.time()
+    python_operation_result = multiply_python_arrays(x=PYTHON_ARRAY_A, y=PYTHON_ARRAY_B)
+    python_exec_time = time.time() - start_time
+    print(f"Time: {python_exec_time}")
 
-start_time = time.time()
-numpy_operation_result = NUMPY_ARRAY_A.dot(NUMPY_ARRAY_B) # mnożenie macierzy
-numpy_exec_time = time.time() - start_time
-print(f"Time: {numpy_exec_time}")
+    start_time = time.time()
+    numpy_operation_result = NUMPY_ARRAY_A.dot(NUMPY_ARRAY_B) # mnożenie macierzy
+    numpy_exec_time = time.time() - start_time
+    print(f"Time: {numpy_exec_time}")
 
-print(python_exec_time / numpy_exec_time)
+    print(python_exec_time / numpy_exec_time)
 
-result_diif = np.sum(np.absolute(numpy_operation_result - np.array(python_operation_result)))
-print(result_diif)
-print(result_diif < 1e5)
+    result_diif = np.sum(np.absolute(numpy_operation_result - np.array(python_operation_result)))
+    print(result_diif)
+    print(result_diif < 1e5)
+
+# (.venv1) radoslawjaniak@mac day_22_07_09_2025 % python numpy_dot_matrix.py
+# Time: 5.666100978851318
+# Time: 0.0013401508331298828
+# 4227.957658779576
+# 1.6576819916735985e-09
+# True
