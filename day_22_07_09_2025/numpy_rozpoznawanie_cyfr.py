@@ -71,7 +71,7 @@ b2 = np.zeros((1, 10))
 
 # parametry treningu
 lr = 0.1
-epochs = 10
+epochs = 50
 batch_size = 64
 
 # Trening
@@ -110,9 +110,17 @@ for epoch in range(epochs):
 # testowanie jedej próbki
 # x = x_test[0].reshape(1, -1)
 # y_true = y_test[0]
-idx = np.random.randint(0, len(x_test))
-x = x_test[idx].reshape(1, -1)
-y_true = y_test[idx]
+# idx = np.random.randint(0, len(x_test))
+# x = x_test[idx].reshape(1, -1)
+# y_true = y_test[idx]
+image_path = "cyfra4.png"
+x = image_to_array(image_path)
+plt.imshow(x.reshape(28, 28), cmap="gray")
+plt.axis('off')
+plt.show()
+print(x.shape)
+x = x.reshape(1, -1)
+y_true = 4
 
 # przewidywanie sieci
 z1 = x @ w1 + b1
@@ -131,7 +139,9 @@ print("Porównanie:", predicted_class == y_true)
 # Porównanie: True
 
 # plt.imshow(x_test[0].reshape(28, 28), cmap="gray")
-plt.imshow(x_test[idx].reshape(28, 28), cmap="gray")
+# plt.imshow(x_test[idx].reshape(28, 28), cmap="gray")
+# plt.imshow(x_test[idx].reshape(28, 28), cmap="gray")
+plt.imshow(x.reshape(28, 28), cmap="gray")
 plt.title(f"Prawda: {y_true}, Przewidziana: {predicted_class}")
 plt.axis('off')
 plt.show()
