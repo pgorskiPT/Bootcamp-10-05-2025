@@ -203,6 +203,13 @@ https://www.youtube.com/watch?v=bD3rx1tCRGQ
 https://www.pythonguis.com/ 
 https://www.pythonguis.com/pyside6-tutorial/
 
+instalacja dlib
+# https://github.com/eddiehe99/dlib-whl/releases/tag/v19.24.6
+# pip install .\dlib-19.24.6-cp312-cp312-win_amd64.whl
+
+zamiennik PyQt6 biblioteka PySide6
+https://doc.qt.io/qtforpython-6/index.html
+
 # testowanie
 
 | Cecha                    | unittest                                                                 | pytest                                                                                       |
@@ -221,3 +228,46 @@ https://www.pythonguis.com/pyside6-tutorial/
 # cześć webowa
 https://github.com/rajkonkret/Bootcamp-10-05-2025-web
 
+# numpy typy danych
+i - integer
+b - boolean
+u - unsigned integer
+f - float
+c - complex float
+m - timedelta
+M - datetime
+O - object
+S - string
+U - unicode string
+V - fixed chunk of memory for other type ( void )
+
+----------------
+venv
+python -m venv myenv
+--- aktywacja
+source .venv/bin/activate - linux/mac
+.venv/Scripts/activate.bat - win cmd
+.venv\Scripts\Activate.ps1  - powershell
+--deaktywacja
+deactivate
+-------------------------
+poetry środowisko wirtulne, nowoczesne podejście (zamiennik venv)
+
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Users\<TwojaNazwa>\AppData\Roaming\Python\Scripts", "User")
+poetry --version
+PS C:\Users\Administrator> Get-Command poetry | Select-Object Source
+
+Source
+------
+C:\Users\Administrator\AppData\Roaming\Python\Scripts\poetry.exe
+
+poetry new moj_projekt
+poetry add requests
+poetry run python --version
+poetry show
+
+git: https://gamma.app/docs/Git-rozproszony-system-kontroli-wersji-m6lnyitz3e788it?mode=doc
+
+link do omówienia django:
+https://notebooklm.google.com/notebook/cb0d4efe-4c35-4f24-b26a-107573c81daa/audio
