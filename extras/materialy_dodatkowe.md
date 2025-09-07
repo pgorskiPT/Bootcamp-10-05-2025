@@ -270,4 +270,3 @@ poetry show
 git: https://gamma.app/docs/Git-rozproszony-system-kontroli-wersji-m6lnyitz3e788it?mode=doc
 
 link do omówienia django:
-https://notebooklm.google.com/notebook/cb0d4efe-4c35-4f24-b26a-107573c81daa/audio
