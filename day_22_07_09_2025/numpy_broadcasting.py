@@ -1,0 +1,115 @@
+# broadcasting
+# zamienia elementy tablicy wg podanego wzoru automatycznie,
+# nie trzeba ręcznie na każdym elemencie wykonywać tej operacji
+# jeżeli wymiary są równe jest ok
+# jesli jeden z wymiarów wynosi 1, NumPy rozciąga ten wymiar aby dotosować do drugiej tablicy
+# jeśli wymiary są różne i żaden nie wynosi 1 - otrzymamy błąd!!!
+import numpy as np
+
+arr = np.array([1, 2, 3])
+result = arr + 10  # 10 -> (1,) -> [10 10 10]
+print(result)  # [11 12 13]
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([[10], [20], [30]])
+print(arr1)
+# [1 2 3]
+print(arr2)
+# [[10]
+#  [20]
+#  [30]]
+print(arr1.shape)  # (3,)
+print(arr2.shape)  # (3, 1)
+result = arr1 + arr2
+print(result)
+# [[11 12 13]
+#  [21 22 23]
+#  [31 32 33]]
+
+arr1 = np.array(([[1, 2, 3], [4, 5, 6]]))
+arr2 = np.array([10, 20, 30])
+print(arr1)
+# [[1 2 3]
+#  [4 5 6]]
+print(arr2)
+# [10 20 30]
+print(arr1.shape)  # (2, 3)
+print(arr2.shape)  # (3,)
+result = arr1 + arr2
+print(result)
+# [[11 22 33]
+#  [14 25 36]]
+
+arr1 = np.ones((4, 3, 2))
+print(arr1)
+# [[[1. 1.]
+#   [1. 1.]
+#   [1. 1.]]
+#
+#  [[1. 1.]
+#   [1. 1.]
+#   [1. 1.]]
+#
+#  [[1. 1.]
+#   [1. 1.]
+#   [1. 1.]]
+#
+#  [[1. 1.]
+#   [1. 1.]
+#   [1. 1.]]]
+arr2 = np.array([10, 20])
+result = arr1 + arr2
+print(result)
+# [[[11. 21.]
+#   [11. 21.]
+#   [11. 21.]]
+#
+#  [[11. 21.]
+#   [11. 21.]
+#   [11. 21.]]
+#
+#  [[11. 21.]
+#   [11. 21.]
+#   [11. 21.]]
+#
+#  [[11. 21.]
+#   [11. 21.]
+#   [11. 21.]]]
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([10, 20])
+print(arr1.shape)  # (3,)
+print(arr2.shape)  # (2,)
+# result = arr1 + arr2
+# ValueError: operands could not be broadcast together with shapes (3,) (2,)
+
+x = np.arange(5)
+y = np.arange(3)
+# print(x + y)
+# ValueError: operands could not be broadcast together with shapes (5,) (3,)
+
+x = np.arange(5)
+y = np.arange(3)
+print(y)  # [0 1 2]
+y = np.arange(3).reshape(3, 1)
+print(y)
+# [[0]
+#  [1]
+#  [2]]
+print(x.shape)  # (5,)
+print(y.shape)  # (3, 1)
+print(x + y)
+# [[0 1 2 3 4]
+#  [1 2 3 4 5]
+#  [2 3 4 5 6]]
+
+print(np.zeros((3, 3)))
+# [[0. 0. 0.]
+#  [0. 0. 0.]
+#  [0. 0. 0.]]
+
+print(np.eye((3)))
+# po przekątnej
+# [[1. 0. 0.]
+#  [0. 1. 0.]
+#  [0. 0. 1.]]
