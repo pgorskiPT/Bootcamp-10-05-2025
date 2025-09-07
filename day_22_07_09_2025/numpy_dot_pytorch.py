@@ -4,9 +4,11 @@ import random
 import numpy as np
 from typing import Tuple
 
+# https://colab.research.google.com/drive/16GrtSSr2WBzW_-AknU19lww-ZCRYanF1#scrollTo=kBKSgeXQeitP
 # Wybór urządzenia: GPU jeśli dostępne, inaczej CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Używane urządzenie: {device}")
+
 
 # Funkcja generująca losową macierz 2D jako tensor
 def generate_random_tensor(shape: Tuple[int, int]) -> torch.Tensor:
@@ -15,6 +17,7 @@ def generate_random_tensor(shape: Tuple[int, int]) -> torch.Tensor:
         for _ in range(shape[0])
     ]
     return torch.tensor(cpu_data, dtype=torch.float32).to(device)
+
 
 # Tworzenie dwóch macierzy na wybranym urządzeniu
 TORCH_ARRAY_A = generate_random_tensor((500, 500))
@@ -40,7 +43,6 @@ print(f"Czas wykonania na CPU (NumPy): {cpu_exec_time:.6f} s")
 diff = torch.sum(torch.abs(gpu_result.cpu() - torch.tensor(numpy_result)))
 print(f"Różnica między GPU a CPU: {diff.item():.10f}")
 print(f"Zgodność wyników: {diff.item() < 1e-5}")
-
 
 # Używane urządzenie: cpu
 # ==============================
