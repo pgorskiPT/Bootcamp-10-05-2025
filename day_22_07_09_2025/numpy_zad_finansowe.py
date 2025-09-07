@@ -27,3 +27,5 @@ print("NAjgorszy scenariusz, wartość portfela po 10 latach:", np.min(final_val
 # NAjgorszy scenariusz, wartość portfela po 10 latach: 3710.4127579491196
 
 # print(annual_growth_rates)
+np.set_printoptions(threshold=np.inf, linewidth=150)
+print(annual_growth_rates)
