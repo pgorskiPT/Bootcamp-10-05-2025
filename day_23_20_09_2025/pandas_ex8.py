@@ -62,3 +62,22 @@ print(data)
 
 df = pd.DataFrame({'Miasto': ['Warszawa', 'Kraków', "Łódź", "Warszawa", "Gliwice"]})
 print(df)
+
+# df['Miasto'].replace("Warszawa", "Warszawa-Stolica", inplace=True) # starsze podejście
+df['Miasto'] = df['Miasto'].replace("Warszawa", "Warszawa-Stolica")  # dla nowszych pandasów
+print(df.to_string())
+#              Miasto
+# 0  Warszawa-Stolica
+# 1            Kraków
+# 2              Łódź
+# 3  Warszawa-Stolica
+# 4           Gliwice
+
+df = pd.DataFrame({'Miasto': ['Warszawa', 'Kraków', "Łódź", "Warszawa", "Gliwice"]})
+df['Miasto'] = df['Miasto'].replace({"Warszawa": "Warszawa-Stolica", "Kraków": "Kraków - Zamkowy"})
+print(df)
+# 0  Warszawa-Stolica
+# 1  Kraków - Zamkowy
+# 2              Łódź
+# 3  Warszawa-Stolica
+# 4           Gliwice
