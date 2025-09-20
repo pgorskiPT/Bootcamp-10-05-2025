@@ -101,3 +101,22 @@ print(df.loc[141])
 # Maxpulse    127.0
 # Calories    375.8
 # Name: 141, dtype: float64
+
+# median() - mediana, wartość środkowa
+data = {"Wiek": [25, 30, 35, 40, 45, 50, 55, 60, 65]}
+
+df = pd.DataFrame(data)
+mediana_wiek = df["Wiek"].median()
+print("Mediana wieku:", mediana_wiek)  # Mediana wieku: 45.0
+
+df = pd.read_csv('data.csv')
+
+median_data = df['Calories'].median()
+print("Mediana:", median_data)  # Mediana: 318.6
+df['Calories'] = df['Calories'].fillna(median_data)  # fillna - wypęłnij NaN
+print(df.loc[141])
+# Duration     60.0
+# Pulse        97.0
+# Maxpulse    127.0
+# Calories    318.6
+# Name: 141, dtype: float64
