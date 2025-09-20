@@ -9,6 +9,6 @@ data = {
     "Maxpulse": {"0": 130, "1": 145, "2": 135, "3": 175, "4": 148, "5": 12},
     "Calories": {"0": 409, "1": 479, "2": 340, "3": 282, "4": 406, "5": 300}
 }
-
+print(type(data))  # <class 'dict'>
 df = pd.DataFrame(data)
 print(df)
