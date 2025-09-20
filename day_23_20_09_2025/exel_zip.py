@@ -33,3 +33,12 @@ with ZipFile("tabela_przestawna21.xlsx", "r") as archive:
 print(xml_content)
 
 root = ET.fromstring(xml_content)
+
+# Przechodzimy przez wszystkie komórki i zamieniamy indeksy na tekst
+data = []
+for row in sheet_root.findall(".//{http://schemas.openxmlformats.org/spreadsheetml/2006/main}row"):
+    row_data = []
+    for cell in row.findall(".//{http://schemas.openxmlformats.org/spreadsheetml/2006/main}c"):
+        cell_value = cell.find(".//{http://schemas.openxmlformats.org/spreadsheetml/2006/main}v")
+        row_data.append(convert_index_to_text(cell_value.text) if cell_value is not None else "")
+    data.append(row_data)
