@@ -23,3 +23,13 @@ def convert_index_to_text(index):
             return shared_strings[idx]
         else:
             return idx
+
+with ZipFile("tabela_przestawna21.xlsx", "r") as archive:
+    print(archive)
+    with archive.open("xl/worksheets/sheet1.xml") as f:
+    # with archive.open("xl/sharedStrings.xml") as f:
+        xml_content = f.read()
+
+print(xml_content)
+
+root = ET.fromstring(xml_content)
