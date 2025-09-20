@@ -28,3 +28,5 @@ df = pd.read_csv('marketing_przecinek.csv',
 
 print(df.head())
 print(df.head(1).to_string())
+
+df.to_csv('marketing_r.csv', sep=",", index=False)
