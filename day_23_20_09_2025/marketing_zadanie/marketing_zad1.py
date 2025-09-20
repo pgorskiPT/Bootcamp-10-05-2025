@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 # df = pd.read_csv('marketing_r.csv')
@@ -36,5 +37,37 @@ df.info()
 # memory usage: 941.1+ KB
 
 # sprawdzmy jaki typ m kolumna 'converted'
-print(df['converted'].dtype) # object
+print(df['converted'].dtype)  # object
 
+# zmienić typ kolumny na typ bool
+df['converted'] = df['converted'].astype('bool')
+print(df['converted'].dtype)  # bool
+df.info()
+# <class 'pandas.core.frame.DataFrame'>
+# RangeIndex: 10037 entries, 0 to 10036
+# Data columns (total 12 columns):
+#  #   Column               Non-Null Count  Dtype
+# ---  ------               --------------  -----
+#  0   user_id              10037 non-null  object
+#  1   date_served          10021 non-null  object
+#  2   marketing_channel    10022 non-null  object
+#  3   variant              10037 non-null  object
+#  4   converted            10037 non-null  bool
+#  5   language_displayed   10037 non-null  object
+#  6   language_preferred   10037 non-null  object
+#  7   age_group            10037 non-null  object
+#  8   date_subscribed      1856 non-null   object
+#  9   date_canceled        577 non-null    object
+#  10  subscribing_channel  1856 non-null   object
+#  11  is_retained          1856 non-null   object
+# dtypes: bool(1), object(11)
+# memory usage: 872.5+ KB
+print(df.head(1).to_string())
+
+df['is_house_ads'] = np.where(df['marketing_channel'] == "House Ads", True, False)
+print(df.is_house_ads.head(3))
+# 0    True
+# 1    True
+# 2    True
+# Name: is_house_ads, dtype: bool
+df.to_csv('marketing_is_house_ads.csv', sep=",", index=False)
