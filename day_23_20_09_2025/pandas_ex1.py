@@ -110,3 +110,8 @@ print(df.describe())
 # 75%    37.500000
 # max    45.000000
 
+print(df.loc[0])
+# Name    Tomek
+# Age        22
+# Sex      male
+# Name: 0, dtype: object
