@@ -131,3 +131,34 @@ print(df.to_string())
 # 	•	*
 # → gwiazdka oznacza „zero lub więcej wystąpień” poprzedniego elementu.
 # W tym przypadku „dowolny znak powtarzany dowolną liczbę razy (albo wcale)”.
+
+df = pd.DataFrame({"Wiek": [18, 25, 30, 15, 40, 65]})
+df['Kategoria'] = df['Wiek'].apply(lambda x: "Senior" if x > 60 else "Dorosły")
+print(df)
+
+
+#    Wiek Kateogoria
+# 0    18    Dorosły
+# 1    25    Dorosły
+# 2    30    Dorosły
+# 3    15    Dorosły
+# 4    40    Dorosły
+# 5    65     Senior
+
+def zmien(x):
+    if x > 60:
+        return "Senior"
+    else:
+        return "Dorosły"
+
+
+df['Kategoria'] = df["Wiek"].apply(zmien)  # podajemy tylko adres funkcji
+print(df)
+#    Wiek Kategoria
+# 0    18   Dorosły
+# 1    25   Dorosły
+# 2    30   Dorosły
+# 3    15   Dorosły
+# 4    40   Dorosły
+# 5    65    Senior
+
