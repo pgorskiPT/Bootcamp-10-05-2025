@@ -133,3 +133,22 @@ print(df.loc[141])
 # Maxpulse    127.0
 # Calories    300.0
 # Name: 141, dtype: float64
+
+# wyświetlenie wierszy posiadające NaN
+df = pd.read_csv('data.csv')
+print(df[df.isna().any(axis=1)])  # wiersze
+#      Duration  Pulse  Maxpulse  Calories
+# 17         45     90       112       NaN
+# 27         60    103       132       NaN
+# 91         45    107       137       NaN
+# 118        60    105       125       NaN
+# 141        60     97       127       NaN
+
+# w poszczególej kolumnie
+print(df[df["Calories"].isna()])
+#      Duration  Pulse  Maxpulse  Calories
+# 17         45     90       112       NaN
+# 27         60    103       132       NaN
+# 91         45    107       137       NaN
+# 118        60    105       125       NaN
+# 141        60     97       127       NaN
