@@ -81,3 +81,28 @@ print(df)
 # 2              Łódź
 # 3  Warszawa-Stolica
 # 4           Gliwice
+
+df = pd.DataFrame({"Wiek": [18, 25, 30, 15, 40]})
+print(df)
+#    Wiek
+# 0    18
+# 1    25
+# 2    30
+# 3    15
+# 4    40
+df["Kategoria"] = "Dorosły"
+print(df)
+#    Wiek Kategoria
+# 0    18   Dorosły
+# 1    25   Dorosły
+# 2    30   Dorosły
+# 3    15   Dorosły
+# 4    40   Dorosły
+df.loc[df['Wiek'] < 18, "Kategoria"] = "Niepełnoletni"
+print(df)
+#    Wiek      Kategoria
+# 0    18        Dorosły
+# 1    25        Dorosły
+# 2    30        Dorosły
+# 3    15  Niepełnoletni
+# 4    40        Dorosły
