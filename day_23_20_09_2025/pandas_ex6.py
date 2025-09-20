@@ -120,3 +120,16 @@ print(df.loc[141])
 # Maxpulse    127.0
 # Calories    318.6
 # Name: 141, dtype: float64
+
+# mode() - moda - wartość najcżęściej występująca (dominanta)
+df = pd.read_csv('data.csv')
+mode_data = df['Calories'].mode()  #
+print("Najczęściej występująca:", mode_data)  # Najczęściej występująca: 0    300.0
+df['Calories'] = df['Calories'].fillna(mode_data[0])
+print(df.loc[141])
+# Name: Calories, dtype: float64
+# Duration     60.0
+# Pulse        97.0
+# Maxpulse    127.0
+# Calories    300.0
+# Name: 141, dtype: float64
