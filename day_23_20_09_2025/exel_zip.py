@@ -1,9 +1,10 @@
 from zipfile import ZipFile
 import xml.etree.ElementTree as ET
 # otwieramy plik Excel jako zip
-with ZipFile("tabela_przestawna2.xlsx", "r") as archive:
+with ZipFile("tabela_przestawna21.xlsx", "r") as archive:
     print(archive)
-    with archive.open("xl/worksheets/sheet1.xml") as f:
+    # with archive.open("xl/worksheets/sheet1.xml") as f:
+    with archive.open("xl/sharedStrings.xml") as f:
         xml_content = f.read()
 
 print(xml_content)
