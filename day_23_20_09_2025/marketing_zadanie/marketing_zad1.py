@@ -71,3 +71,21 @@ print(df.is_house_ads.head(3))
 # 2    True
 # Name: is_house_ads, dtype: bool
 df.to_csv('marketing_is_house_ads.csv', sep=",", index=False)
+
+# zamiana dat na typ datetime
+df['date_served'] = pd.to_datetime(df['date_served'], errors='coerce', format='mixed')
+print(df['date_served'].head(3))
+# 0   2018-01-01
+# 1   2018-01-01
+# 2   2018-01-01
+# Name: date_served, dtype: datetime64[ns]
+
+# dodanie kolumny channel_code, zmapowanie nazw  marketing_channel na channel_code
+channel_dict = {"House Ads": 1, "Instagram": 2, "Facebook": 3, "Email": 4, "Push": 5}
+df['channel_code'] = df['marketing_channel'].map(channel_dict)
+print(df['channel_code'].head(3))
+# 0    1.0
+# 1    1.0
+# 2    1.0
+# Name: channel_code, dtype: float64
+
