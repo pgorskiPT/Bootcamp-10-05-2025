@@ -6,7 +6,7 @@ import os
 # pip install polars-lts-cpu - dla starszych cpu, bez instrukcj avx2
 
 rows_per_chunk = 1_000_000
-total_rows = 1_000_000
+total_rows = 100_000_000
 filename = "bigfile_polars.csv"
 categories = np.array(['A', 'B', 'C', 'D'])
 np.random.seed(42)
@@ -26,7 +26,7 @@ for i, start in enumerate(range(0, total_rows, rows_per_chunk)):
     if i == 0:
         df.write_csv(filename)
     else:
-        with open(filename, "a") as f:
+        with open(filename, "a", encoding='utf-8') as f:
             df.write_csv(f, include_header=False)
     print(f"Zapisano wiersze {start} - {end}")
 
