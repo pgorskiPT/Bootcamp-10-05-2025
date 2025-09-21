@@ -89,3 +89,18 @@ print(df['channel_code'].head(3))
 # 2    1.0
 # Name: channel_code, dtype: float64
 
+# # dni tygodnia numerycznie
+# df['date_served'] = df['date_served'].dt.dayofweek
+# print(df['date_served'].head(3))
+# # 0    0.0 - poniedziałek
+# # 1    0.0
+# # 2    0.0
+# # Name: date_served, dtype: float64
+
+# nazwy dni tygodnia
+df['day_name'] = df['date_served'].dt.day_name()
+print(df['day_name'].head(3))
+# 0    Monday
+# 1    Monday
+# 2    Monday
+# Name: day_name, dtype: object
