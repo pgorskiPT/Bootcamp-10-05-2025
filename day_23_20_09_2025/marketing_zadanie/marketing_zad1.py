@@ -80,15 +80,6 @@ print(df['date_served'].head(3))
 # 2   2018-01-01
 # Name: date_served, dtype: datetime64[ns]
 
-# dodanie kolumny channel_code, zmapowanie nazw  marketing_channel na channel_code
-channel_dict = {"House Ads": 1, "Instagram": 2, "Facebook": 3, "Email": 4, "Push": 5}
-df['channel_code'] = df['marketing_channel'].map(channel_dict)
-print(df['channel_code'].head(3))
-# 0    1.0
-# 1    1.0
-# 2    1.0
-# Name: channel_code, dtype: float64
-
 # # dni tygodnia numerycznie
 # df['date_served'] = df['date_served'].dt.dayofweek
 # print(df['date_served'].head(3))
@@ -98,9 +89,21 @@ print(df['channel_code'].head(3))
 # # Name: date_served, dtype: float64
 
 # nazwy dni tygodnia
-df['day_name'] = df['date_served'].dt.day_name()
-print(df['day_name'].head(3))
+# df['day_name'] = df['date_served'].dt.day_name()
+# print(df['day_name'].head(3))
 # 0    Monday
 # 1    Monday
 # 2    Monday
 # Name: day_name, dtype: object
+# dodanie kolumny channel_code, zmapowanie nazw  marketing_channel na channel_code
+channel_dict = {"House Ads": 1, "Instagram": 2, "Facebook": 3, "Email": 4, "Push": 5}
+df['channel_code'] = df['marketing_channel'].map(channel_dict)
+print(df['channel_code'].head(3))
+# 0    1.0
+# 1    1.0
+# 2    1.0
+# Name: channel_code, dtype: float64
+
+
+
+
