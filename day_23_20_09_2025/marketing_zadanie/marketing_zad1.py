@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from sympy import rotations
 
 # df = pd.read_csv('marketing_r.csv')
 # print(df.head().to_string())
@@ -104,6 +105,50 @@ print(df['channel_code'].head(3))
 # 2    1.0
 # Name: channel_code, dtype: float64
 
+# unikalni uzytkownicy dziennie
+daily_users = df.groupby(['date_served'])['user_id'].nunique()
+print("Dziennie:", daily_users)
+# Dziennie: date_served
+# 2018-01-01    362
+# 2018-01-02    374
+# 2018-01-03    348
+# 2018-01-04    323
+# 2018-01-05    319
+# 2018-01-06    308
+# 2018-01-07    275
+# 2018-01-08    312
+# 2018-01-09    312
+# 2018-01-10    337
+# 2018-01-11    310
+# 2018-01-12    301
+# 2018-01-13    306
+# 2018-01-14    305
+# 2018-01-15    767
+# 2018-01-16    388
+# 2018-01-17    369
+# 2018-01-18    318
+# 2018-01-19    305
+# 2018-01-20    311
+# 2018-01-21    229
+# 2018-01-22    178
+# 2018-01-23    172
+# 2018-01-24    190
+# 2018-01-25    184
+# 2018-01-26    222
+# 2018-01-27    320
+# 2018-01-28    320
+# 2018-01-29    319
+# 2018-01-30    317
+# 2018-01-31    340
+# Name: user_id, dtype: int64
 
+import matplotlib.pyplot as plt
 
+daily_users.plot()
 
+plt.title("Zasięg dzienny kampani marketingowej")
+plt.xlabel("Data")
+plt.ylabel("Liczba użytkowników")
+plt.xticks(rotation=45)
+
+plt.show()
