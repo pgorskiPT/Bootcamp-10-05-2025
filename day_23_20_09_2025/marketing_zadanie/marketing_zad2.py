@@ -16,7 +16,6 @@ df['is_house_ads'] = np.where(df['marketing_channel'] == "House Ads", True, Fals
 df['converted'] = df['converted'].astype('bool')
 print(df['converted'].dtype)  # bool
 
-
 df['date_served'] = pd.to_datetime(df['date_served'], errors='coerce', format='mixed')
 # print(df['date_served'].head(3))
 
@@ -29,4 +28,20 @@ daily_users = df.groupby(['date_served'])['user_id'].nunique()
 df.info()
 
 df.to_csv("marketing_ok_date.csv")
+
+subscribers = df[df['converted'] == True]['user_id'].nunique()
+total = df['user_id'].nunique()
+print("Subscribers:", subscribers)
+print("Total:", total)
+# Subskrybenci: 1030
+# Total: 7309
+
+# współczynnik konwersji
+conv_rate = subscribers / total
+print("Convert rate:", conv_rate)  # Convert rate: 0.14092215077301956
+print("Convert rate:", round(conv_rate * 100, 2), "%")  # Convert rate: 14.09 %
+
+retained = df[df["is_retained"] == True]['user_id'].nunique()
+retention = retained / subscribers
+print("Retention rate:", round(retention * 100, 2), "%")  # Retention rate: 65.83 %
 
