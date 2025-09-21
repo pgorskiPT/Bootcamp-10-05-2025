@@ -41,7 +41,14 @@ conv_rate = subscribers / total
 print("Convert rate:", conv_rate)  # Convert rate: 0.14092215077301956
 print("Convert rate:", round(conv_rate * 100, 2), "%")  # Convert rate: 14.09 %
 
+# współczynnik utrzymania uzytkowników
 retained = df[df["is_retained"] == True]['user_id'].nunique()
 retention = retained / subscribers
 print("Retention rate:", round(retention * 100, 2), "%")  # Retention rate: 65.83 %
 
+# House Ads
+house_ads = df[df['subscribing_channel'] == "House Ads"]
+retained = house_ads[house_ads["is_retained"] == True]["user_id"].nunique()
+subscribers = house_ads[house_ads['converted'] == True]['user_id'].nunique()
+retention_rate = retained / subscribers
+print("Retention rate:", round(retention_rate * 100, 2), "%")  # Retention rate: 58.05 %
