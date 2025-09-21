@@ -40,7 +40,7 @@ print("German index:", german_index)
 # German index: 0.9899396378269617
 
 converted = (house_ads.groupby(['date_served', 'language_preferred'])
-             .agg({"user_id": "unique", "converted": "sum"}))
+             .agg({"user_id": "nunique", "converted": "sum"}))
 print(converted.head(3))
 #                                                                           user_id  converted
 # date_served language_preferred
@@ -54,3 +54,51 @@ print(converted.head(3))
 # 2018-01-01          [a100000041, a100000044]  ...       NaN
 # 2018-01-02                               NaN  ...       NaN
 # 2018-01-03                               NaN  ...       1.0
+
+converted['english_conv_rate'] = (converted.loc['2018-01-11':'2018-01-31'][('converted', 'English')] /
+                                  converted.loc['2018-01-11':'2018-01-31'][('user_id', 'English')])
+print(converted.head(3))
+# date_served                                ...
+# 2018-01-01             2.0    29.0    2.0  ...       1.0     NaN               NaN
+# 2018-01-02             NaN    14.0    3.0  ...       3.0     NaN               NaN
+# 2018-01-03             NaN    15.0    1.0  ...       1.0     1.0               NaN
+#
+# [3 rows x 9 columns]
+# unique - zwraca unikalne
+# nunique - zwraca liczbe unikalnych
+
+converted['expected_spanish_rate'] = converted["english_conv_rate"] * spanish_index
+converted['expected_arabic_rate'] = converted["english_conv_rate"] * arabic_index
+converted['expected_german_rate'] = converted["english_conv_rate"] * german_index
+
+print(converted['expected_spanish_rate'])
+
+converted['expected_spanish_conv'] = converted["expected_spanish_rate"] * converted[('user_id', 'Spanish')]
+converted['expected_arabic_conv'] = converted["expected_arabic_rate"] * converted[('user_id', 'Arabic')]
+converted['expected_german_conv'] = converted["expected_german_rate"] * converted[('user_id', 'German')]
+print(converted['expected_spanish_conv'].head(3))
+
+converted = converted.loc['2018-01-11':'2018-01-31']
+expected_subs = (
+        converted['expected_spanish_conv'].sum()
+        + converted['expected_arabic_conv'].sum()
+        + converted['expected_german_conv'].sum()
+)
+print("Expected:", expected_subs)  # Expected: 27.457799428147837
+
+# actual_subs = (
+#         converted[('converted', 'Spanish')].sum()
+#         + converted[('converted', 'Arabic')].sum()
+#         + converted[('converted', 'German')].sum()
+# )
+
+# bardziej pythoniczne
+actual_subs = sum([
+    converted[('converted', 'Spanish')].sum(),
+    converted[('converted', 'Arabic')].sum(),
+    converted[('converted', 'German')].sum(),
+])
+print("Actual sum:", actual_subs)  # Actual sum: 26.0
+
+lost = expected_subs - actual_subs
+print("Lost sum:", lost)  # Lost sum: 1.4577994281478368
