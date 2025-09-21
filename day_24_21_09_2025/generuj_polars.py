@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 #  pip install polars
+# pip install polars-lts-cpu - dla starszych cpu, bez instrukcj avx2
 
 rows_per_chunk = 1_000_000
 total_rows = 1_000_000
