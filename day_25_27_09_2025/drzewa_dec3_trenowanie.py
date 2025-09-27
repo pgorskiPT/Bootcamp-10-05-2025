@@ -20,11 +20,11 @@ tree = DecisionTreeClassifier(criterion='gini', max_depth=2)
 tree.fit(X, y)
 
 # predykcja
-decision = tree.predict(np.array([[30, 40]])) # Pożyczka odrzucona
+decision = tree.predict(np.array([[30, 40]]))  # Pożyczka odrzucona
 print("Pożyczka przyznana" if decision[0] == 1 else "Pożyczka odrzucona")
 
 # wizualizacja drzewa
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(8, 5))
 plot_tree(tree, feature_names=['wiek', "zarobki"],
           class_names=['odrzucona', 'przyznany'], filled=True)
 plt.title("Drzewo decyzyjne: przyznawanie pożyczki")
