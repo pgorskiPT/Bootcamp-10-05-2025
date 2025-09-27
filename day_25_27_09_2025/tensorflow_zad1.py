@@ -13,6 +13,12 @@ import numpy as np
 
 # 3.13.7
 import tensorflow as tf
+from tensorflow import keras
+from keras import Input
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
 print("Dostępne urządzenia:")
 print(tf.config.list_physical_devices())
+print("Czy GPU jest dostępne:", tf.config.list_physical_devices('GPU'))
+print("Czy GPU jest dostępne:", tf.config.list_physical_devices())
