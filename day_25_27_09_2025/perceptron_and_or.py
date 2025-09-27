@@ -25,7 +25,7 @@ W = np.random.rand(2, 2) * 2 - 1
 bias = np.random.rand(2) * 2 - 1
 
 learning_rate = 0.1
-epochs = 1000
+epochs = 100
 
 for epoch in range(epochs):
     weighed_sum = np.dot(X, W) + bias
