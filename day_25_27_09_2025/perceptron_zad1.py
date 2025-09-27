@@ -135,3 +135,11 @@ print("Przewidywane wyniki:", predictions)
 # Trening OR
 # int64
 # Przewidywane wyniki: [0 1 1 1]
+
+# ustawienia dla operacji AND nie zadziałąją
+p.set_fit()
+predictions = p.predict(X)
+print("Przewidywane wyniki:", predictions)
+# [0.2 0.1]
+# -0.20000000000000004
+# Przewidywane wyniki: [0 0 0 1]

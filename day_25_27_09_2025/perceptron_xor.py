@@ -43,3 +43,58 @@ class Perceptron:
 
 
 # dane treningowe
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 0])  # etykiety
+
+# trening
+p = Perceptron(learning_rate=0.1, epochs=10)
+p.fit(X, y)
+
+preditions = p.predict(X)
+print("Przewidywane wyniki:", preditions)
+# [-0.1  0. ]
+# 0.0
+# Przewidywane wyniki: [1 1 0 0]
+
+# test2
+# dane treningowe
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 0])  # etykiety
+
+# trening
+p = Perceptron(learning_rate=0.1, epochs=500)
+p.fit(X, y)
+
+preditions = p.predict(X)
+print("Przewidywane wyniki:", preditions)
+# [-0.1  0. ]
+# 0.0
+# Przewidywane wyniki: [1 1 0 0]
+
+# test3
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 0])  # etykiety
+
+# trening
+p = Perceptron(learning_rate=0.01, epochs=500)
+p.fit(X, y)
+
+preditions = p.predict(X)
+print("Przewidywane wyniki:", preditions)
+# [-0.01  0.  ]
+# 0.0
+# Przewidywane wyniki: [1 1 0 0]
+
+# test4
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 0])  # etykiety
+
+# trening
+p = Perceptron(learning_rate=0.015, epochs=5000)
+p.fit(X, y)
+
+preditions = p.predict(X)
+print("Przewidywane wyniki:", preditions)
+# [-0.015  0.   ]
+# 0.0
+# Przewidywane wyniki: [1 1 0 0]
