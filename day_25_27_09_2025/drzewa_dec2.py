@@ -65,3 +65,50 @@ wypisz_grupe("wiek =< 50", wiek_prawo)
 #  tak: 3
 #  nie: 3
 #  Gini: 0.5
+
+zarobki_value = 50
+zarobki_lewo = [x for x in dane if x['zarobki'] > zarobki_value]
+zarobki_prawo = [x for x in dane if x['zarobki'] <= zarobki_value]
+
+# obliczamy wskaźik giniego przed i po podziale
+print("Gini (całość)", round(gini_index(dane), 3))
+print("Gini po podziale (zarobli >50)", round(gini_po_podziale(zarobki_lewo, zarobki_prawo), 3))
+# Gini (całość) 0.48
+# Gini po podziale (zarobli > 50) 0.4
+# strata 0.08
+
+wypisz_grupe("zarobki > 50", zarobki_lewo)
+wypisz_grupe("zarobki =< 50", zarobki_prawo)
+
+
+#  zarobki > 50 (liczba 5)
+#  tak: 4
+#  nie: 1
+#  Gini: 0.32
+#
+#  zarobki =< 50 (liczba 5)
+#  tak: 2
+#  nie: 3
+#  Gini: 0.48
+
+# wizualizacja
+def narysuj_podzial(lewa, prawa, tytul, split_f):
+    plt.figure(figsize=(10, 4))
+    for grupa, nazwa, kolor in zip([lewa, prawa], [f"{split_f} > 50", f"{split_f} < 50"], ["green", "red"]):
+        x = [x['wiek'] for x in grupa]
+        y = [x['zarobki'] for x in grupa]
+        decyzje = [x['decyzja'] for x in grupa]
+        kolory = ['blue' if d == "tak" else "grey" for d in decyzje]
+        plt.scatter(x, y, c=kolory, label=nazwa, edgecolors=kolor, s=100, alpha=0.8)
+
+    plt.xlabel("Wiek")
+    plt.ylabel("Zarobki")
+    plt.title(f"Podział: {split_f} > 50")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+
+narysuj_podzial(wiek_lewo, wiek_prawo, "Podział po wieku", "wiek")
+narysuj_podzial(zarobki_lewo, zarobki_prawo, "Podział po zarobkach", "zarobki")
