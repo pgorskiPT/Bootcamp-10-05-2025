@@ -33,6 +33,7 @@ model.fit(X, y)
 
 y_pred = model.predict(X)
 print(y_pred)
+
 test_input = pd.DataFrame([
     {"wiek": 34, "zarobki": 60},
     {"wiek": 50, "zarobki": 40},
@@ -41,3 +42,5 @@ test_input = pd.DataFrame([
     {"wiek": 37, "zarobki": 35},
     {"wiek": 60, "zarobki": 20}
 ])
+
+predicted = model.predict(test_input)
