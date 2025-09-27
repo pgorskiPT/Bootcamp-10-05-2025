@@ -12,9 +12,13 @@ def leaky_relu_derivative(x, alpha=0.01):
     return np.where(x > 0, 1, alpha)
 
 
-# XOR
+# # XOR
+# X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+# y = np.array([[0], [1], [1], [0]])  # etykiety
+
+# AND
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-y = np.array([[0], [1], [1], [0]])  # etykiety
+y = np.array([[0], [0], [0], [1]])
 
 np.random.seed(42)
 
@@ -25,8 +29,10 @@ np.random.seed(42)
 W_hidden = np.random.randn(2, 2) * np.sqrt(2 / 2)
 W_output = np.random.randn(2, 1) * np.sqrt(2 / 2)
 
-learning_rate = 0.01
-epochs = 4000
+# learning_rate = 0.01
+# epochs = 4000
+learning_rate = 0.1
+epochs = 1000
 
 # trenowanie sieci
 for epoch in range(epochs):
