@@ -117,4 +117,21 @@ p.fit(X, y)
 predictions = p.predict(X)
 print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 1 1 1]
 
-plot_decision_boundary(X, y, p)
+# plot_decision_boundary(X, y, p)
+
+# or
+print("Trening OR")
+
+# dane treningowe
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 1])
+print(X.dtype)
+
+# trening
+p = Perceptron(learning_rate=0.1, epochs=10)
+p.fit(X, y)
+predictions = p.predict(X)
+print("Przewidywane wyniki:", predictions)
+# Trening OR
+# int64
+# Przewidywane wyniki: [0 1 1 1]
