@@ -7,6 +7,9 @@
 # # np funkcja skokowa wartości 0 lub 1
 # # perceptron binarny
 import numpy as np
+import matplotlib.pyplot as plt
+
+print(np.__version__)
 
 
 class Perceptron:
@@ -33,6 +36,7 @@ class Perceptron:
                 self.weights += update * X[i]
                 self.bias += update
 
+    #
     def set_fit(self):
         self.weights = np.array([0.2, 0.1])
         self.bias = -0.20000000000000004
@@ -42,6 +46,23 @@ class Perceptron:
         print(self.bias)
         linear_output = np.dot(X, self.weights) + self.bias
         return np.array([self.activation_function(x) for x in linear_output])
+
+
+def plot_decision_boundary(X, y, model):
+    x_min, x_max = -0.5, 1.5
+    y_min, y_max = -0.5, 1.5
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
+                         np.linspace(y_min, y_max, 100))
+
+    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    plt.contourf(xx, yy, Z, alpha=0.3, cmap=plt.cm.Paired)
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Paired, edgecolors="k")
+    plt.title("Podział obszaru decyzyjnego")
+    plt.xlabel("X1")
+    plt.ylabel("X2")
+    plt.show()
 
 
 # # AND
@@ -61,3 +82,39 @@ p.fit(X, y)
 # testowanie perceptronu
 predictions = p.predict(X)
 print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 0 0 1]
+
+p = Perceptron(learning_rate=0.1, epochs=5)
+p.fit(X, y)
+
+# testowanie perceptronu
+# [0.2 0.1]
+# -0.20000000000000004
+predictions = p.predict(X)
+print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 0 0 1]
+
+p = Perceptron(learning_rate=0.1, epochs=2)
+p.fit(X, y)
+
+# testowanie perceptronu
+# [0.02 0.01]
+# -0.03
+predictions = p.predict(X)
+print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 1 1 1]
+
+p = Perceptron(learning_rate=0.01, epochs=5)
+p.fit(X, y)
+predictions = p.predict(X)
+print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 0 0 1]
+
+# testowanie perceptronu
+# [0.02 0.01]
+# -0.01
+predictions = p.predict(X)
+print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 1 1 1]
+
+p = Perceptron(learning_rate=0.01, epochs=2)
+p.fit(X, y)
+predictions = p.predict(X)
+print("Przeiwdywane wyniki:", predictions)  # Przeiwdywane wyniki: [0 1 1 1]
+
+plot_decision_boundary(X, y, p)
