@@ -1,4 +1,4 @@
-# perceptron wielowarstwowy
+# perceptron wielowarstwowy (MLP)
 import numpy as np
 
 
@@ -11,8 +11,13 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
+# # XOR
+# X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+# y = np.array([[0], [1], [1], [0]])  # etykiety
+
+# AND
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-y = np.array([[0], [1], [1], [0]])  # etykiety
+y = np.array([[0], [0], [0], [1]])
 
 np.random.seed(42)
 
@@ -42,3 +47,25 @@ for epoch in range(epochs):
     # aktualizacja wag
     W_output += hidden_output.T.dot(d_output) * learning_rate
     W_hidden += X.T.dot(d_hidden) * learning_rate
+
+# Testowanie XOR
+for i in range(4):
+    # warstwa ukryta
+    hidden_input = np.dot(X[i], W_hidden)
+    hidden_output = sigmoid(hidden_input)
+
+    # warstwa wyjściowa
+    output_input = np.dot(hidden_output, W_output)
+    output = sigmoid(output_input)
+
+    print(f'Wejśie: {X[i]} -> Przewidywane wyjścia: {output[0]:.4f}')
+    # print(f'Wejśie: {X[i]} -> Przewidywane wyjścia: {int(output[0] > 0.5):.4f}')
+# Wejśie: [0 0] -> Przewidywane wyjścia: 0.0943
+# Wejśie: [0 1] -> Przewidywane wyjścia: 0.8466
+# Wejśie: [1 0] -> Przewidywane wyjścia: 0.8466
+# Wejśie: [1 1] -> Przewidywane wyjścia: 0.2026
+
+# Wejśie: [0 0] -> Przewidywane wyjścia: 0.0026
+# Wejśie: [0 1] -> Przewidywane wyjścia: 0.0214
+# Wejśie: [1 0] -> Przewidywane wyjścia: 0.0244
+# Wejśie: [1 1] -> Przewidywane wyjścia: 0.4976
