@@ -60,3 +60,9 @@ print(test_input)
 
 # accuracy = metrics.accuracy_score(y, predicted)
 # print(f"Accuracy: {accuracy:.2f}") #
+
+plt.figure(figsize=(10, 6))
+plot_tree(model, feature_names=['wiek', 'zarobki'],
+          class_names=['nie', 'tak'], filled=True)
+plt.title("Drzewo decyzyjne")
+plt.show()
