@@ -28,3 +28,8 @@ plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.title(f"Dokłądniejszy model - wykryto twarzy: {len(detections)}")
 plt.axis("off")
 plt.show()
+
+# https://github.com/eddiehe99/dlib-whl/releases/tag/v19.24.6
+# pip install .\dlib-19.24.6-cp312-cp312-win_amd64.whl
+# https://github.com/eddiehe99/dlib-whl/blob/main/dlib-20.0.0-cp313-cp313-win_amd64.whl
+# pip install .\dlib-20.0.0-cp313-cp313-win_amd64.whl
