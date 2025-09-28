@@ -50,7 +50,7 @@ def train_model(y_train, logic_type):
     ])
 
     # kompilacja modelu
-    model.compile(optimizer="adam", loss='binary_crossentropy', metric=['accuracy'])
+    model.compile(optimizer="adam", loss='binary_crossentropy', metrics=['accuracy'])
 
     with tf.device("/GPU:0"):
         model.fit(X, y_train, epochs=500, verbose=1)
