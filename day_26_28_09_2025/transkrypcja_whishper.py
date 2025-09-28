@@ -20,8 +20,8 @@ device = "cpu" if torch.backends.mps.is_available() else "cpu"
 print(f"Używam: {device}")
 print("Start...")
 # model = whisper.load_model('medium')
-model = whisper.load_model('small', device=device)
-# model = whisper.load_model('tiny')
+# model = whisper.load_model('small', device=device)
+model = whisper.load_model('tiny', device=device)
 # result = model.transcribe("audio_file.wav", word_timestamps=True)
 result = model.transcribe("audio_file1.wav", word_timestamps=True)
 
