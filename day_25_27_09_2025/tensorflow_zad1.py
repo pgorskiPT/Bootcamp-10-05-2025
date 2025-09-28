@@ -22,3 +22,17 @@ print("Dostępne urządzenia:")
 print(tf.config.list_physical_devices())
 print("Czy GPU jest dostępne:", tf.config.list_physical_devices('GPU'))
 print("Czy GPU jest dostępne:", tf.config.list_physical_devices())
+
+input()
+# dane wejściowe
+X = np.array(
+    [[0, 0],
+     [0, 1],
+     [1, 0],
+     [1, 1]]
+)
+
+# dane do nauki
+y_xor = np.array([[0], [1], [1], [0]])
+y_and = np.array([[0], [0], [0], [1]])
+y_or = np.array([[0], [1], [1], [1]])
