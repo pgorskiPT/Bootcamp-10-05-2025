@@ -52,8 +52,22 @@ def train_model(y_train, logic_type):
     # kompilacja modelu
     model.compile(optimizer="adam", loss='binary_crossentropy', metric=['accuracy'])
 
+    with tf.device("/GPU:0"):
+        model.fit(X, y_train, epochs=500, verbose=1)
+
     # testowanie modelu
     predictions = model.predict(X)
     predictions = (predictions > 0.5).astype(int)
 
     print(f'Przewidywanie wyników dla operacji {logic_type}')
+    for i in range(len(X)):
+        print(f"{X[i]} {predictions[i][0]} oczekiwanie: {y_train[i][0]}")
+
+    return model
+
+
+start_time = time.time()
+
+model_xor = train_model(y_xor, "XOR")
+
+print(f'Estimated time:{time.time() - start_time}')
