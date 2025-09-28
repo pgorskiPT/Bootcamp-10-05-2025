@@ -44,8 +44,8 @@ def train_model(y_train, logic_type):
 
     # definiujemy model
     model = Sequential([
-        Input(2, ),
-        Dense(4, activation="relu"),  # warstwa ukryta, 4 neurony, funkcja relu
+        Input(shape=(2, )),
+        Dense(4, activation="relu",),  # warstwa ukryta, 4 neurony, funkcja relu
         Dense(1, activation="sigmoid")  # warstwa wyjściowa, sigmoid
     ])
 
