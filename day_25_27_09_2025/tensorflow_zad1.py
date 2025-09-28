@@ -36,3 +36,24 @@ X = np.array(
 y_xor = np.array([[0], [1], [1], [0]])
 y_and = np.array([[0], [0], [0], [1]])
 y_or = np.array([[0], [1], [1], [1]])
+
+
+# trening
+def train_model(y_train, logic_type):
+    print(f"Uczenie modelu dla operacji: {logic_type}")
+
+    # definiujemy model
+    model = Sequential([
+        Input(2, ),
+        Dense(4, activation="relu"),  # warstwa ukryta, 4 neurony, funkcja relu
+        Dense(1, activation="sigmoid")  # warstwa wyjściowa, sigmoid
+    ])
+
+    # kompilacja modelu
+    model.compile(optimizer="adam", loss='binary_crossentropy', metric=['accuracy'])
+
+    # testowanie modelu
+    predictions = model.predict(X)
+    predictions = (predictions > 0.5).astype(int)
+
+    print(f'Przewidywanie wyników dla operacji {logic_type}')
