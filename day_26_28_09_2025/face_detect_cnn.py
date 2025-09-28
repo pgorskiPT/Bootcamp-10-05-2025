@@ -1,7 +1,8 @@
 import cv2
 import dlib
 import matplotlib.pyplot as plt
-#siec cnn
+
+# siec cnn
 # model sieci wytrenowany
 cnn_model_path = "mmod_human_face_detector.dat"
 
