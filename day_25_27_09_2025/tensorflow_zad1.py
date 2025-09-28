@@ -53,7 +53,7 @@ def train_model(y_train, logic_type):
     model.compile(optimizer="adam", loss='binary_crossentropy', metrics=['accuracy'])
 
     with tf.device("/GPU:0"):
-        model.fit(X, y_train, epochs=200, verbose=1)
+        model.fit(X, y_train, epochs=500, verbose=1)
 
     # testowanie modelu
     predictions = model.predict(X)
@@ -72,7 +72,7 @@ model_xor = train_model(y_xor, "XOR")
 
 print(f'Estimated time:{time.time() - start_time}')
 
-model_xor.save("model_xor.keras")
+model_xor.save("model_xor1.keras")
 print("Modekl został zapisany")
 # Przewidywanie wyników dla operacji XOR
 # [0 0] 1 oczekiwanie: 0
@@ -81,3 +81,8 @@ print("Modekl został zapisany")
 # [1 1] 0 oczekiwanie: 0
 # Estimated time:128.0428717136383
 # Modekl został zapisany
+
+weights = model_xor.get_weights()
+filename = "weights_only.npz"
+np.savez(filename, *weights)
+print("Wagi zostały zapisane")
