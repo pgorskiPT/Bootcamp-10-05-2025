@@ -48,3 +48,7 @@ print("Transkrypcja zostałą zakończona")
 print(f"✅ Transkrypcja została zakończona")
 print(f"📄 Zapisano do pliku: {output_filename}")
 print(f"⏱ Czas działania: {elapsed:.2f} sekund")
+# Transkrypcja zostałą zakończona
+# ✅ Transkrypcja została zakończona
+# 📄 Zapisano do pliku: transkrypcja_medium.txt
+# ⏱ Czas działania: 199.80 sekund
