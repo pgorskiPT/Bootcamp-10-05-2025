@@ -1,10 +1,13 @@
 import numpy as np
 
+
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
+
 def sigmoid_derivative(x):
     return x * (1 - x)
+
 
 # dane
 # liczba końćzyn, sierść, pióra, waga, ogon
@@ -25,3 +28,18 @@ y = np.array([
     [0, 1, 0],  # pies
     [0, 0, 1],  # kura
 ])
+
+# stabilizacja danych
+# w celu poprawy szybkości nauki
+# min-max
+X = X / np.max(X, axis=0)
+
+# ustawienia modelu
+input_neurons = X.shape[1]  # 5 neuronów
+hidden_neurons = 4  # 4 neurony
+output_neurons = y.shape[1]  # 3 wyjscia
+learning_rate = 0.5
+epochs = 10000
+
+W_input_hidden = np.random.uniform(-1, 1, (input_neurons, hidden_neurons))
+W_hidden_output = np.random.uniform(-1, 1, (hidden_neurons, output_neurons))
