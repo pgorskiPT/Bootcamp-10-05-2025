@@ -53,7 +53,7 @@ def train_model(y_train, logic_type):
     model.compile(optimizer="adam", loss='binary_crossentropy', metrics=['accuracy'])
 
     with tf.device("/GPU:0"):
-        model.fit(X, y_train, epochs=500, verbose=1)
+        model.fit(X, y_train, epochs=1500, verbose=1)
 
     # testowanie modelu
     predictions = model.predict(X)
