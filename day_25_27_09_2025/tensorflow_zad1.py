@@ -23,7 +23,7 @@ print(tf.config.list_physical_devices())
 print("Czy GPU jest dostępne:", tf.config.list_physical_devices('GPU'))
 print("Czy GPU jest dostępne:", tf.config.list_physical_devices())
 
-input()
+# input()
 # dane wejściowe
 X = np.array(
     [[0, 0],
