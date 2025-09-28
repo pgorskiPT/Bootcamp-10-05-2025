@@ -76,3 +76,25 @@ test_data = np.array([
     [4, 1, 0, 10, 1],  # kot
     [4, 1, 0, 18, 1],  # Zwierzę 6: Pies
 ])
+
+test_data = test_data / np.max(test_data, axis=0)
+
+# # przewidywanie
+hidden_input = np.dot(test_data, W_input_hidden)
+hidden_output = sigmoid(hidden_input)
+final_input = np.dot(hidden_output, W_hidden_output)
+final_output = sigmoid(final_input)
+print(final_output)
+
+print("Przewidywanie klasy")
+for i , pred in enumerate(final_output):
+    print(i, pred)
+    predicted_class = np.argmax(pred) # zwraca numer indeksu z najwyższą wartością
+    class_names = ['Kot', 'Pies', "Kura"]
+    print(f'Zwierze {i + 1}: {class_names[predicted_class]}')
+# Zwierze 1: Kot
+# Zwierze 2: Pies
+# Zwierze 3: Kura
+# Zwierze 4: Kura
+# Zwierze 5: Kot
+# Zwierze 6: Pies
