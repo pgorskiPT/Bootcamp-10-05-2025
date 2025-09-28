@@ -35,3 +35,5 @@ print(vec_krolowa)
 
 similarity = cosine_similarity(vec_krol, vec_krolowa)
 print("Podobieństwo kosinusowe:", similarity)
+
+# Podobieństwo kosinusowe: 0.7559289460184544 - dość podobne słowa
