@@ -1,5 +1,6 @@
 import requests
 
+# # ollama pull llama3.2
 # ollama pull SpeakLeash/bielik-11b-v2.3-instruct:Q4_K_M
 # ollama run SpeakLeash/bielik-11b-v2.3-instruct:Q4_K_M
 
